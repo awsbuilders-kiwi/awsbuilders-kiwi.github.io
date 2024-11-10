@@ -1,5 +1,5 @@
 .calendar-container {
-    background: white;
+    background: #22201f;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     padding: 1rem;
@@ -14,7 +14,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 .calendar-header button {
@@ -48,7 +48,7 @@
     height: 100%;
     padding: 5px;
     border: 1px solid #ddd;
-    background-color: white;
+    background-color: #996713;
     display: flex;
     flex-direction: column;
     min-width: 120px;

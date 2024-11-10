@@ -5,7 +5,7 @@
     --background-color: #000000;
     --text-color: #2c3e50;
     --border-color: #dcdde1;
-    --hover-color: #e1e2e6;
+    --hover-color: #c0af7f;
     --mobile-breakpoint: 768px;
     --small-mobile-breakpoint: 480px;
 }
@@ -25,6 +25,16 @@ html, body {
     font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
 }
 
+.presenter-banner{
+    image-orientation:  center;  
+    max-width: 100%;
+    height: auto;
+    max-height: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1em;
+}
 /* Header Style */
 .header-bar {
     width: 100vw; /* viewport width */
