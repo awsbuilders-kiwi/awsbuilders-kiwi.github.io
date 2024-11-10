@@ -44,9 +44,9 @@ html, body {
     color: black;
     text-align: center;
     padding: 0em 0;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../images/awsbuilders.kiwi.original.1024x1024.jpg");
+    background-image: linear-gradient(rgba(15, 11, 11, 0.339), rgba(207, 196, 196, 0.762)), url("../images/awsbuilders.kiwi.original.1024x1024.jpg");
     background-size: cover;
-    background-position: center;
+    background-position: 75% 60%;
     background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
