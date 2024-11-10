@@ -29,6 +29,7 @@ html, body {
 .header-bar {
     width: 100vw; /* viewport width */
     min-width: 320px;
+    min-height: 10em;
     background-color: #000000;
     color: white;
     text-align: center;
