@@ -39,7 +39,7 @@ html, body {
     background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
-    height: 180px;
+    height: fit-content;
 }
 
 .header-bar-content {
