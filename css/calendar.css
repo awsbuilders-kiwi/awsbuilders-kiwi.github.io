@@ -1,0 +1,379 @@
+.calendar-container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 1rem;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.calendar-header button {
+    background: var(--secondary-color);
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    flex: 1;
+    background-color: var(--background-color);
+    max-width: 100%; /* Prevents it from stretching beyond container */
+}
+
+.weekday {
+    text-align: center;
+    font-weight: bold;
+    padding: 0.5rem;
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.calendar-day {
+    min-height: 120px;
+    height: 100%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    min-width: 120px;
+}
+
+.calendar-day.empty {
+    background-color: var(--background-color);
+}
+
+.calendar-day:hover {
+    background-color: var(--hover-color);
+}
+
+.day-number {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.event-indicator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    background: var(--secondary-color);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    cursor: pointer;
+}
+
+.event-indicator:hover {
+    background: var(--secondary-color-dark);
+}
+
+.event-indicator .event-name {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.event-indicator .user-count {
+    font-size: 0.8em;
+    white-space: nowrap;
+    opacity: 0.9;
+}
+
+.event-indicator .user-count i {
+    margin-right: 2px;
+}
+
+.event-indicator.more-events {
+    text-align: center;
+    background: #95a5a6;
+}
+
+
+.close-btn {
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.time-slots {
+    display: grid;
+    gap: 0.5rem;
+    max-height: 70vh;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.time-slot {
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.time-slot-event {
+    background: var(--secondary-color);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    cursor: pointer;
+}
+
+.event-details p {
+    margin-bottom: 0.5rem;
+}
+
+.time-slots::-webkit-scrollbar {
+    width: 8px;
+}
+
+.time-slots::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.time-slots::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 4px;
+}
+
+.time-slots::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color-dark);
+}
+
+.modal-header .event-header-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#eventImage {
+    margin: 0;
+}
+
+#eventImage img.event-image {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    display: block;
+}
+
+.event-title-container {
+    padding: 0 20px;
+}
+
+.event-details {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem 1rem;
+}
+
+.event-details .label {
+    font-weight: 700;
+}
+
+.event-details .value {
+    word-break: break-word;
+}
+
+#calendarLinks, #discordLinks {
+    grid-column: 1 / -1;
+    margin-top: 1rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 10px;
+}
+
+#calendarLinks h4, #discordLinks h4 {
+    margin-bottom: 0.5rem;
+}
+
+.calendar-link, .discord-link {
+    display: inline-block;
+    margin: 4px 4px 4px 0;
+    padding: 4px 8px;
+    background: #5865F2;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.calendar-link:hover {
+    text-decoration: underline;
+}
+
+.discord-link:hover {
+    background: #4752C4;
+}
+
+.discord-link.app-link {
+    background: #36393f;
+}
+
+.discord-link.app-link:hover {
+    background: #2f3136;
+}
+
+#calendarLinks::-webkit-scrollbar,
+#discordLinks::-webkit-scrollbar {
+    height: 6px;
+}
+
+#calendarLinks::-webkit-scrollbar-track,
+#discordLinks::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+#calendarLinks::-webkit-scrollbar-thumb,
+#discordLinks::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 3px;
+}
+
+#calendarLinks::-webkit-scrollbar-thumb:hover,
+#discordLinks::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color-dark);
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.header-nav h3 {
+    margin: 0;
+    font-family: 'Aclonica';
+    font-size: 22px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .container {
+        margin: 1rem auto;
+        padding: 0 0.5rem;
+    }
+
+    .calendar-grid {
+        gap: 2px;
+    }
+
+    .calendar-day {
+        min-height: 80px;
+        padding: 0.25rem;
+        font-size: 0.9rem;
+    }
+
+    .weekday {
+        padding: 0.25rem;
+        font-size: 0.8rem;
+    }
+
+    .event-indicator {
+        padding: 0.25rem;
+        font-size: 0.8rem;
+    }
+
+    .calendar-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+
+    .calendar-header button {
+        width: 100%;
+        margin: 2px 0;
+    }
+
+    .header-nav {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+
+    .header-nav h3 {
+        font-size: 18px;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 2vh auto;
+    }
+
+    .modal-body {
+        padding: 0.5rem;
+    }
+
+    .event-details {
+        grid-template-columns: 1fr;
+    }
+
+    .event-details .label {
+        margin-top: 0.5rem;
+    }
+
+    .calendar-link, .discord-link {
+        display: block;
+        margin: 0.5rem 0;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .event-indicator .user-count {
+        display: none;
+    }
+
+    .calendar-day {
+        min-height: 60px;
+    }
+
+    .day-number {
+        font-size: 0.8rem;
+    }
+}
+
+/* Add these new styles for Twitch events */
+.event-indicator.twitch-event {
+    background: #6441a5; /* Twitch purple */
+    display: flex;
+    align-items: center;
+}
+
+.event-indicator.twitch-event:hover {
+    background: #7d5bbe; /* Lighter purple on hover */
+}
+
+/* Add styles for Twitch links */
+.twitch-link {
+    display: inline-block;
+    margin: 4px 4px 4px 0;
+    padding: 4px 8px;
+    background: #6441a5;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.twitch-link:hover {
+    background: #7d5bbe;
+}
