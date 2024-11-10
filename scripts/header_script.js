@@ -1,7 +1,9 @@
 // List of headers to cycle through
+//    "<center><img src=\"images/AWSBUILDERSKIWI.png\"></center><text class=\"heading_subtitle\">NZs Premiere Tech Connection Hub! Link up with Presenters and Members today!</text>",
+
 const headers = [
-    "<br /><h1>! Mi Casa, Su Casa !<br>Free discord server for your remote presentations.</h1>",
-    "<br /><h1>Join Our Community on Discord Today</h1>",
+    "<br /><h1 class=\"hb\">! Mi Casa, Su Casa !<br>Free discord server for your remote presentations.</h1>",
+    "<br /><h1 class=\"hb\">Connect with the community on Discord today</h1>",
     "<img src='images/presenter-banners/1.png' height=85%>",
     "<img src='images/presenter-banners/2.png' height=85%>",
     "<img src='images/presenter-banners/3.png' height=85%>",
