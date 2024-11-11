@@ -19,6 +19,8 @@ class Calendar {
             this.fetchDiscordEvents(),
             this.fetchAWSTwitchChannelEvents()
         ]);
+        console.log('Discord events:', this.discordEvents.length);
+        console.log('Twitch events:', this.twitchEvents.length);
         await this.generateAllEvents();
         this.renderCalendar();
     }
@@ -88,7 +90,7 @@ class Calendar {
             this.discordEvents = data;
         } catch (error) {
             console.error('Error fetching Discord events:', error);
-            this.events = [];
+            this.discordEvents = [];
 
             let userMessage = 'Unable to load Discord calendar events. ';
             if (error.message.includes('HTTP error')) {
@@ -117,10 +119,10 @@ class Calendar {
                 throw new Error('Invalid data format received from server');
             }
 
-            this.events = data;
+            this.twitchEvents = data;
         } catch (error) {
             console.error('Error fetching AWS Twitch channel events:', error);
-            this.events = [];
+            this.twitchEvents = [];
 
             let userMessage = 'Unable to load AWS Twitch channel calendar events. ';
             if (error.message.includes('HTTP error')) {
