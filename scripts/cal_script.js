@@ -9,6 +9,7 @@ class Calendar {
         this.renderCalendar();
         this.errorModal = document.getElementById('errorModal');
         this.initializeErrorHandling();
+        this.discordEvents = [];
         this.twitchEvents = [];
         this.fetchAllEvents();
     }
@@ -84,7 +85,7 @@ class Calendar {
                 throw new Error('Invalid data format received from server');
             }
 
-            this.events = data;
+            this.discordEvents = data;
         } catch (error) {
             console.error('Error fetching Discord events:', error);
             this.events = [];
@@ -138,7 +139,7 @@ class Calendar {
         const expandedEvents = [];
 
         // Combine Discord and Twitch events
-        const allEvents = [...this.events, ...this.twitchEvents];
+        const allEvents = [...this.discordEvents, ...this.twitchEvents];
 
         for (const event of allEvents) {
             if (!event.recurrence_rule) {
