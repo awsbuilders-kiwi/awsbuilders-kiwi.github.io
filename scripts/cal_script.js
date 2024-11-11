@@ -16,7 +16,7 @@ class Calendar {
     async fetchAllEvents() {
         await Promise.all([
             this.fetchDiscordEvents(),
-            this.fetchTwitchEvents()
+            this.fetchAWSTwitchChannelEvents()
         ]);
         await this.generateAllEvents();
         this.renderCalendar();
