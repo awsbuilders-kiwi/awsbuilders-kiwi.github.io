@@ -25,7 +25,7 @@ const headers = [
         <a href=\"https://chamila.dev/blog\" target="_blank"><img src=\"images/presenter-banners/3.png\"></a>
       </div>
       <div class=\"presenterbannercolumn\">
-        <a href=\"https://linkedin.com/ramstack\" target="_blank"><img src=\"images/presenter-banners/5.png\"></a>
+        <a href=\"https://www.linkedin.com/in/ramstack/\" target="_blank"><img src=\"images/presenter-banners/5.png\"></a>
       </div>
       <div class=\"presenterbannercolumn\">
         <a href=\"https://dunlop.geek.nz\" target="_blank"><img src=\"images/presenter-banners/1.png\"></a> 
