@@ -333,7 +333,7 @@ class Calendar {
             // Put Discord events first
             return a.platform === 'discord' ? -1 : 1;
         });
-        
+
         dayViewDate.textContent = date.toLocaleDateString('en-NZ', {
             weekday: 'long',
             year: 'numeric',

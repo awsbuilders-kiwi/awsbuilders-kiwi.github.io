@@ -52,5 +52,5 @@ const headers = [
   }
   
   // Change header every 3 seconds
-  setInterval(changeHeader, 2000);
+  setInterval(changeHeader, 4000);
   

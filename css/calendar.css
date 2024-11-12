@@ -114,6 +114,7 @@
 .close-btn {
     cursor: pointer;
     font-size: 1.5rem;
+    justify-self: right;
 }
 
 .time-slots {
