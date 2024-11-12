@@ -246,9 +246,6 @@ class Calendar {
                 // }
                 // Sort events to put Discord first
                 dayEvents = dayEvents.sort((a, b) => {
-                    if (a.platform === b.platform) {
-                        return new Date(a.start_time) - new Date(b.start_time);
-                    }
                     return b.platform === 'discord' ? 1 : -1;
                 });
 
