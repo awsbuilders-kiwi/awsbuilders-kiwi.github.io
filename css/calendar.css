@@ -450,3 +450,31 @@
         margin: 2vh auto;
     }
 }
+
+/* Time slot event styles */
+.time-slot-event {
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.2s ease;
+}
+
+/* Discord event style */
+.time-slot-event.discord-event {
+    background: var(--secondary-color, #996713);
+}
+
+.time-slot-event.discord-event:hover {
+    background: var(--secondary-color-dark, #805710);
+}
+
+/* Twitch event style */
+.time-slot-event.twitch-event {
+    background: #6441a5;
+}
+
+.time-slot-event.twitch-event:hover {
+    background: #7d5bbe;
+}

@@ -346,6 +346,14 @@ class Calendar {
             slotEvents.forEach(event => {
                 const eventElement = document.createElement('div');
                 eventElement.className = 'time-slot-event';
+                
+                // Add platform-specific class
+                if (event.platform === 'twitch') {
+                    eventElement.classList.add('twitch-event');
+                } else {
+                    eventElement.classList.add('discord-event');
+                }
+                
                 eventElement.textContent = event.name;
                 eventElement.addEventListener('click', () => this.showEventDetails(event));
                 timeSlot.appendChild(eventElement);
