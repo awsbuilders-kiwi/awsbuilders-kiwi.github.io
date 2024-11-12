@@ -238,13 +238,13 @@ class Calendar {
                 dayNumber.className = 'day-number';
                 dayNumber.textContent = day;
                 dayElement.appendChild(dayNumber);
-
+                const EARLIEST_HOUR = 8;
                 let dayEvents = this.getEventsForDate(new Date(year, month, day));
 
-                // if (dayEvents.length > 0) {
-                //     console.log(`Events for ${year}-${month + 1}-${day}:`, dayEvents);
-                // }
-                // Sort events to put Discord first
+                dayEvents = dayEvents.filter(event => {
+                    const eventTime = new Date(event.scheduled_start_time);
+                    return eventTime.getHours() >= EARLIEST_HOUR;
+                })
                 dayEvents = dayEvents.sort((a, b) => {
                     if (a.platform === b.platform) {
                         return new Date(a.scheduled_start_time) - new Date(b.scheduled_start_time);
