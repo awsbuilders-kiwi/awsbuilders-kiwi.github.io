@@ -17,7 +17,7 @@ const headers = [
       </div>
     </div>`,
 
-    "<br /><h1 class=\"hb\">Connect with the community on Discord today</h1>",
+    "<br /><h1 class=\"hb\">Connect with your community on Discord today</h1>",
 
     `<table width=100%><tr bgcolor=white><Td>YOUR AMAZING VOLUNTEER COMMUNITY PRESENTERS</Td></tr></table>
     <div class=\"bannerrow\">
@@ -31,6 +31,8 @@ const headers = [
         <a href=\"https://dunlop.geek.nz\" target="_blank"><img src=\"images/presenter-banners/1.png\"></a> 
       </div>
     </div>`,
+
+    "<br /><h1 class=\"hb\">Discord has a powerful event management system to host your conference style remote presentations.</h1>",
 
     "<center><img src=\"images/AWSBUILDERSKIWI.png\"></center><text class=\"heading_subtitle\">NZs Premiere Tech Connection Hub! Link up with Presenters and Members today!</text>",
 ];
