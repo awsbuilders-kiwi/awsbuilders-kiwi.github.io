@@ -24,6 +24,7 @@ html, body {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
+    font-size: 16pt;
 }
 
 /* Header Bar Styles */
@@ -32,7 +33,7 @@ html, body {
     position: relative;
     width: 95vw;
     min-width: 320px;
-    min-height: 10em;
+    min-height: 6em;
     height: 1vh; /* Set height based on viewport height for flexible scaling */
     padding: 2em; /* Adjust padding to control inner spacing */
     margin-top: 1em;

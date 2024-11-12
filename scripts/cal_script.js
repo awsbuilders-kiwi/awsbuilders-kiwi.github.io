@@ -141,7 +141,7 @@ class Calendar {
         const expandedEvents = [];
 
         // Combine Discord and Twitch events
-        const allEvents = [...this.twitchEvents, ...this.discordEvents];
+        const allEvents = [...this.discordEvents, ...this.twitchEvents];
 
         for (const event of allEvents) {
             if (!event.recurrence_rule) {
