@@ -249,9 +249,8 @@ class Calendar {
                     if (a.platform === b.platform) {
                         return new Date(a.scheduled_start_time) - new Date(b.scheduled_start_time);
                     }
-                    return b.platform === 'discord' ? -1 : 1;
+                    return a.platform === 'discord' ? -1 : 1;  // Ensures Discord is at the top
                 });
-
                 const maxEventsPerDay = 5;
                 const visibleEvents = dayEvents.slice(0, maxEventsPerDay);
 
