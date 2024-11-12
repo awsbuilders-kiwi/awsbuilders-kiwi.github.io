@@ -407,7 +407,7 @@ class Calendar {
 
         // Image handling
         const imageContainer = document.getElementById('eventImage');
-        if (event.platform=='discord' && event?.id && event?.imagehash) {
+        if (event.platform ==='discord' && event?.id && event?.imagehash) {
             const imageUrl = `https://cdn.discordapp.com/guild-events/${event.id}/${event.imagehash}.png?size=512`;
             imageContainer.style.display = 'block';
             imageContainer.innerHTML = `<img src="${imageUrl}" alt="${event.name} Image" class="event-image"/>`;
