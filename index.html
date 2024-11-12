@@ -1,12 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>AWSBuilders.kiwi - placeholder</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>AWSBuilders.kiwi - Your NZ AWS Community Hub</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/calendar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Aclonica" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Architects+Daughter" />
+    <link rel="icon" type="image/png" href="/images/16x16/9844768/awsbuilders.kiwi.logo_800x800.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/images/32x32/9844768/awsbuilders.kiwi.logo_800x800.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/96x96/9844768/awsbuilders.kiwi.logo_800x800.png" sizes="96x96">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/images/152x152/9844768/awsbuilders.kiwi.logo_800x800.png">
 </head>
 <body>
-    <center>
-        <img src="https://awsbuilders.kiwi/images/913/9801977/AWSBUILDERSKIWI2.png" width="25%" height=25%"><br />
-        github page - site moving here soon...
-    </center>
+    <script src="scripts/cal_script.js"></script>
+    <script src="scripts/header_script.js"></script>
+
+    <!-- Top Header -->
+    <header class="header-bar">
+        <div class="header-bar-content" id="headerbarContent">
+            <center>
+                <img src="images/AWSBUILDERSKIWI.png">
+            </center>
+            <text class="heading_subtitle">NZs Premiere Tech Connection Hub! Link up with Presenters and Members today!</text>
+        </div>
+    </header>
+
+    <!-- Main Content Section with Three Columns -->
+    <main class="container">
+        <section class="column left">
+            <!-- Left Column Content -->
+            <center>
+                <h1>! Welcome !</h1>
+                <hr width="50%">
+                <br />
+                This site acts as a gateway to a free community discord server.<br /r>
+                Join the discord server by clicking below:
+                <div class="circle-image">
+                    <a href="https://discord.gg/4UJfJ755T8" target="_blank"><img src="images/awsbuilders.kiwi.logo_800x800-cm.png"></a>
+                </div>
+            </center>
+            Note:<br />
+                <li>The events calender on the right is up to date with events from both community discord server and the AWS twitch channel.</li>
+                <li>Anyone can join the server for free!</li>
+                <li>Anyone can join as a presenter immediately (select option on join)!</li>
+                <li>Anyone can use the server for remote presentations free!</li>
+                <li>All people involved are community volunteers giving up their free time to help uplift AWS knowledge in NZ</li>
+        </section>
+
+        <section class="column middle">
+            <!-- Middle Column Content -->
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <button id="prevMonth">&lt;</button>
+                    <h2 id="monthDisplay"></h2>
+                    <button id="nextMonth">&gt;</button>
+                </div>
+                <div class="calendar-grid">
+                    <div class="weekday">Sun</div>
+                    <div class="weekday">Mon</div>
+                    <div class="weekday">Tue</div>
+                    <div class="weekday">Wed</div>
+                    <div class="weekday">Thu</div>
+                    <div class="weekday">Fri</div>
+                    <div class="weekday">Sat</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="column right">
+            <!-- Right Column Content -->
+            <center>
+                <a href="https://swag.awsbuilders.kiwi" target="_blank"><img src="images/swag-outlet.png" class="swagimage"></a>
+                <font style="font-size:8pt;">**Swag purchases help to pay the run costs for the community</font>
+                <div class="discord-widget-container">
+                    <iframe src="https://discord.com/widget?id=1157469922633466058&theme=dark"
+                            width="100%"
+                            height="500"
+                            style="max-width: 350px;"
+                            allowtransparency="true"
+                            frameborder="0"
+                            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
+                    </iframe>
+                </div>
+            </center>
+        </section>
+    </main>
+
+    <!-- Main Modal Popups -->
+    <div>
+        <!-- Day View Modal -->
+        <div id="dayViewModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="dayViewDate"></h3>
+                    <span class="close-btn">&times;</span>
+                </div>
+                <div class="time-slots"></div>
+            </div>
+        </div>
+
+        <!-- Event Details Modal -->
+        <div id="eventDetailsModal" class="event-details-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="event-header-content">
+                        <span class="close-btn">&times;</span>
+                        <div id="eventImage"></div>
+                        <div class="event-title-container">
+                            <h2 id="eventTitle"></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="event-details">
+                        <p id="eventCreator"></p>
+                        <p id="eventDescription"></p>
+                        <p id="eventTime"></p>
+                        <p id="eventRecurrence"></p>
+                    </div>
+                    <div id="discordLinks"></div>
+                    <div id="calendarLinks"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Error Details Modal -->
+        <div id="errorModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;
+                <h2>Error</h2>
+                <p id="errorMessage"></p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
