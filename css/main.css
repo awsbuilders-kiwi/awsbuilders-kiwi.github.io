@@ -222,47 +222,6 @@ a:visited {
     color: black;
 }
 
-/* Media Queries for different screen sizes - Responsive Layout */
-@media screen and (max-width: 768px) {
-    .container {
-        flex-direction: column; /* Stack columns vertically on mobile */
-    }
-    
-    .left, .middle, .right {
-        flex: none;
-        width: 100%;
-    }
-
-    /* Adjust header height for mobile */
-    .header-bar {
-        height: 120px; /* Smaller height on mobile */
-    }
-
-    /* Adjust any iframe content */
-    iframe {
-        width: 100% !important;
-        max-width: 350px;
-        height: auto;
-    }
-
-    /* Adjust images to be responsive */
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-}
-
-/* Small mobile devices */
-@media screen and (max-width: 480px) {
-    .header-bar {
-        height: 100px; /* Even smaller height for very small devices */
-    }
-
-    .column {
-        padding: 0.5em; /* Reduce padding on very small screens */
-    }
-}
-
 /* discord widget */
 .discord-widget-container {
     width: 100%;
@@ -358,4 +317,130 @@ a:visited {
 .circle-image:hover img {
     transform: scale(1.05);
     transition: transform 0.3s ease;
+}
+
+/* Base styles remain the same */
+
+/* Media Queries for different screen sizes - Responsive Layout */
+
+/* Large devices (iPad Pro, larger tablets) */
+@media screen and (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+    }
+}
+
+/* Medium devices (iPad Mini, small tablets) */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .left, .middle, .right {
+        flex: none;
+        width: 100%;
+    }
+
+    .header-bar {
+        height: 120px;
+    }
+
+    iframe {
+        width: 100% !important;
+    }
+}
+
+/* iPhone 15 Pro Max, 14 Pro Max, 13 Pro Max, 12 Pro Max */
+@media screen and (device-width: 430px) and (device-height: 932px),
+       screen and (device-width: 428px) and (device-height: 926px) {
+    .header-bar {
+        height: 110px;
+    }
+    
+    .column {
+        padding: 0.75em;
+    }
+}
+
+/* iPhone 15 Pro, 14 Pro, 13 Pro, 12 Pro */
+@media screen and (device-width: 393px) and (device-height: 852px),
+       screen and (device-width: 390px) and (device-height: 844px) {
+    .header-bar {
+        height: 105px;
+    }
+    
+    .column {
+        padding: 0.6em;
+    }
+}
+
+/* iPhone 15, 14, 13, 12 */
+@media screen and (device-width: 390px) and (device-height: 844px) {
+    .header-bar {
+        height: 100px;
+    }
+    
+    .column {
+        padding: 0.6em;
+    }
+}
+
+/* iPhone 15 Plus, 14 Plus, 13 Plus, 12 Plus */
+@media screen and (device-width: 428px) and (device-height: 926px) {
+    .header-bar {
+        height: 110px;
+    }
+    
+    .column {
+        padding: 0.7em;
+    }
+}
+
+/* iPhone SE (3rd gen, 2nd gen) and iPhone 8 */
+@media screen and (device-width: 375px) and (device-height: 667px) {
+    .header-bar {
+        height: 90px;
+    }
+    
+    .column {
+        padding: 0.5em;
+    }
+}
+
+/* General small mobile devices (including older iPhones) */
+@media screen and (max-width: 480px) {
+    .header-bar {
+        height: 100px;
+    }
+
+    .column {
+        padding: 0.5em;
+    }
+    
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Extra small devices */
+@media screen and (max-width: 320px) {
+    .header-bar {
+        height: 80px;
+    }
+
+    .column {
+        padding: 0.4em;
+    }
+}
+
+/* Landscape orientation adjustments */
+@media screen and (max-width: 932px) and (orientation: landscape) {
+    .header-bar {
+        height: 80px;
+    }
+    
+    .column {
+        padding: 0.5em;
+    }
 }
