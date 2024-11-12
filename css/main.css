@@ -334,6 +334,9 @@ a:visited {
 /* Base styles remain the same */
 /* Media Queries for different screen sizes - Responsive Layout */
 @media screen and (max-width: 1200px) {
+    .body {
+        font-size: 10pt;
+    }
     .container {
         flex-direction: column;
     }
