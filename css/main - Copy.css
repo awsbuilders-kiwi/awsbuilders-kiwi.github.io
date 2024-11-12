@@ -48,14 +48,14 @@ html, body {
     animation: slide-in 1s ease forwards;
 }
 
-  @keyframes slide-in {
+@keyframes slide-in {
     from {
-      transform: translateX(100%);
+        transform: translateX(100%);
     }
     to {
-      transform: translateX(0);
+        transform: translateX(0);
     }
-  }
+}
 
 h1 {
     font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
@@ -184,7 +184,7 @@ a:visited {
     .container {
         flex-direction: column; /* Stack columns vertically on mobile */
     }
-    
+
     .left, .middle, .right {
         flex: none;
         width: 100%;

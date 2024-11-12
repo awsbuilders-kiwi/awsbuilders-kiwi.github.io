@@ -37,7 +37,7 @@ html, body {
     padding: 2em; /* Adjust padding to control inner spacing */
     margin-top: 1em;
     margin-left: 1em;
-    
+
     /* Prevent overflow */
     overflow: hidden;
 
@@ -77,14 +77,14 @@ html, body {
 .presenterbannercolumn {
     /* Layout */
     flex: 1;
-    
+
     /* Content alignment */
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5px;
     padding: 5px;
-    
+
     /* Prevent overflow */
     overflow: hidden;
 }
@@ -128,7 +128,7 @@ html, body {
     width: 100%;
     min-width: 320px; /* Minimum width for smallest phones */
     /* Prevent overflow */
-    overflow: hidden;    
+    overflow: hidden;
 }
 
 /* Column Styles */
@@ -145,6 +145,7 @@ section.column.middle {
 .left, .right {
     flex: 1;
     background-color: var(--background-color);
+    margin-left: 1em;
 }
 
 .middle {
@@ -320,9 +321,7 @@ a:visited {
 }
 
 /* Base styles remain the same */
-
 /* Media Queries for different screen sizes - Responsive Layout */
-
 /* Large devices (iPad Pro, larger tablets) */
 @media screen and (max-width: 1024px) {
     .container {
@@ -335,7 +334,7 @@ a:visited {
     .container {
         flex-direction: column;
     }
-    
+
     .left, .middle, .right {
         flex: none;
         width: 100%;
@@ -352,11 +351,11 @@ a:visited {
 
 /* iPhone 15 Pro Max, 14 Pro Max, 13 Pro Max, 12 Pro Max */
 @media screen and (device-width: 430px) and (device-height: 932px),
-       screen and (device-width: 428px) and (device-height: 926px) {
+    screen and (device-width: 428px) and (device-height: 926px) {
     .header-bar {
         height: 110px;
     }
-    
+
     .column {
         padding: 0.75em;
     }
@@ -364,11 +363,11 @@ a:visited {
 
 /* iPhone 15 Pro, 14 Pro, 13 Pro, 12 Pro */
 @media screen and (device-width: 393px) and (device-height: 852px),
-       screen and (device-width: 390px) and (device-height: 844px) {
+    screen and (device-width: 390px) and (device-height: 844px) {
     .header-bar {
         height: 105px;
     }
-    
+
     .column {
         padding: 0.6em;
     }
@@ -379,7 +378,7 @@ a:visited {
     .header-bar {
         height: 100px;
     }
-    
+
     .column {
         padding: 0.6em;
     }
@@ -390,7 +389,7 @@ a:visited {
     .header-bar {
         height: 110px;
     }
-    
+
     .column {
         padding: 0.7em;
     }
@@ -401,7 +400,7 @@ a:visited {
     .header-bar {
         height: 90px;
     }
-    
+
     .column {
         padding: 0.5em;
     }
@@ -416,7 +415,7 @@ a:visited {
     .column {
         padding: 0.5em;
     }
-    
+
     img {
         max-width: 100%;
         height: auto;
@@ -439,7 +438,7 @@ a:visited {
     .header-bar {
         height: 80px;
     }
-    
+
     .column {
         padding: 0.5em;
     }
