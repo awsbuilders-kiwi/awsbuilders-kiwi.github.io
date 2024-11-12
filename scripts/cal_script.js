@@ -244,6 +244,13 @@ class Calendar {
                 // if (dayEvents.length > 0) {
                 //     console.log(`Events for ${year}-${month + 1}-${day}:`, dayEvents);
                 // }
+                // Sort events to put Discord first
+                dayEvents = dayEvents.sort((a, b) => {
+                    if (a.platform === b.platform) {
+                        return new Date(a.start_time) - new Date(b.start_time);
+                    }
+                    return b.platform === 'discord' ? 1 : -1;
+                });
 
                 const maxEventsPerDay = 5;
                 const visibleEvents = dayEvents.slice(0, maxEventsPerDay);
@@ -323,16 +330,6 @@ class Calendar {
     showDayView(date, events) {
         const dayViewDate = document.getElementById('dayViewDate');
         const timeSlots = document.querySelector('.time-slots');
-
-        // Sort events to put Discord events first
-        const sortedEvents = events.sort((a, b) => {
-            if (a.platform === b.platform) {
-                // If platforms are the same, sort by time
-                return new Date(a.start_time) - new Date(b.start_time);
-            }
-            // Put Discord events first
-            return a.platform === 'discord' ? -1 : 1;
-        });
 
         dayViewDate.textContent = date.toLocaleDateString('en-NZ', {
             weekday: 'long',
