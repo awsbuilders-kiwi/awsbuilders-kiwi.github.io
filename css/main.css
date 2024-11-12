@@ -123,8 +123,8 @@ html, body {
 .swagimage{
     border-radius: 10%;
     transition: transform 0.3s ease;
-    max-width: 150px;
-    max-height: 150px;
+    max-width: 350px;
+    max-height: 250px;
 }
 
 /* Main Container */
@@ -149,10 +149,16 @@ section.column.middle {
     margin-bottom: auto;
 }
 
-.left, .right {
+.left {
     flex: 1;
     background-color: var(--background-color);
-    margin-left: 1em;
+
+}
+
+.right {
+    flex: 0.5; /* Make right column half the width of left column */
+    background-color: var(--background-color);
+    margin-left: 2em;
 }
 
 .middle {

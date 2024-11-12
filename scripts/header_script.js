@@ -4,31 +4,31 @@
 const headers = [
     "<br /><h1 class=\"hb\">! Mi Casa, Su Casa !<br>Discord server available for your remote presentations</h1>",
 
-    `<table width=100%><tr bgcolor=white><Td>YOU AMAZING VOLUNTEER COMMUNITY PRESENTERS</Td></tr></table>
+    `<table width=100%><tr bgcolor=white><Td>YOUR AMAZING VOLUNTEER COMMUNITY PRESENTERS</Td></tr></table>
     <div class=\"bannerrow\">
       <div class=\"presenterbannercolumn\">
-        <a href=\"https://dunlop.geek.nz\"><img src=\"images/presenter-banners/1.png\"></a>
+        <a href=\"https://dunlop.geek.nz\"><img src=\"images/presenter-banners/younext.png\"></a>
       </div>
       <div class=\"presenterbannercolumn\">
         <img src=\"images/presenter-banners/2.png\">
       </div>
       <div class=\"presenterbannercolumn\">
-        <img src=\"images/presenter-banners/3.png\">
+        <img src=\"images/presenter-banners/4.png\">
       </div>
     </div>`,
 
-    "<br /><br /><h1 class=\"hb\">Connect with the community on Discord today</h1>",
+    "<br /><h1 class=\"hb\">Connect with the community on Discord today</h1>",
 
-    `<table width=100%><tr bgcolor=white><Td>YOU AMAZING VOLUNTEER COMMUNITY PRESENTERS</Td></tr></table>
+    `<table width=100%><tr bgcolor=white><Td>YOUR AMAZING VOLUNTEER COMMUNITY PRESENTERS</Td></tr></table>
     <div class=\"bannerrow\">
       <div class=\"presenterbannercolumn\">
-        <img src=\"images/presenter-banners/4.png\">
+        <img src=\"images/presenter-banners/3.png\">
       </div>
       <div class=\"presenterbannercolumn\">
         <img src=\"images/presenter-banners/5.png\">
       </div>
       <div class=\"presenterbannercolumn\">
-        <img src=\"images/presenter-banners/younext.png\">
+        <img src=\"images/presenter-banners/1.png\">
       </div>
     </div>`,
 
