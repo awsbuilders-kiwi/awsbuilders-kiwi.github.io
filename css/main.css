@@ -37,13 +37,11 @@ html, body {
 .header-bar {
     /* Base layout */
     position: relative;
-    width: 100%;
     min-width: 320px;
     min-height: 6em;
     height: 1vh; /* Set height based on viewport height for flexible scaling */
     padding: 2em; /* Adjust padding to control inner spacing */
-    margin-top: 1em;
-    margin-left: 1em;
+    margin: 10px;
 
     /* Prevent overflow */
     overflow: hidden;
@@ -123,8 +121,8 @@ html, body {
 .swagimage{
     border-radius: 10%;
     transition: transform 0.3s ease;
-    max-width: 350px;
-    max-height: 250px;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 /* Main Container */
