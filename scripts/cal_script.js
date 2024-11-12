@@ -239,14 +239,17 @@ class Calendar {
                 dayNumber.textContent = day;
                 dayElement.appendChild(dayNumber);
 
-                const dayEvents = this.getEventsForDate(new Date(year, month, day));
+                let dayEvents = this.getEventsForDate(new Date(year, month, day));
 
                 // if (dayEvents.length > 0) {
                 //     console.log(`Events for ${year}-${month + 1}-${day}:`, dayEvents);
                 // }
                 // Sort events to put Discord first
                 dayEvents = dayEvents.sort((a, b) => {
-                    return b.platform === 'discord' ? 1 : -1;
+                    if (a.platform === b.platform) {
+                        return new Date(a.scheduled_start_time) - new Date(b.scheduled_start_time);
+                    }
+                    return b.platform === 'discord' ? -1 : 1;
                 });
 
                 const maxEventsPerDay = 5;
