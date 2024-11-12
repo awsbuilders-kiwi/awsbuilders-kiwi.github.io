@@ -495,14 +495,32 @@ class Calendar {
             });
         }
 
-        // Show the modal
+        // Update modal display
+        this.eventDetailsModal.className = 'event-details-modal';
         this.eventDetailsModal.style.display = 'block';
+
+        // Add this line to handle modal content width based on content
+        const modalContent = this.eventDetailsModal.querySelector('.modal-content');
+        modalContent.style.width = 'fit-content';
+
+        // Optional: Add escape key listener to close modal
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                this.closeModals();
+                }
+        });
     }
 
 
+    // Updated closeModals method:
     closeModals() {
         this.modals.forEach(modal => {
             modal.style.display = 'none';
+            // Remove any inline styles that might have been added
+            const modalContent = modal.querySelector('.modal-content');
+            if (modalContent) {
+                modalContent.style.width = '';
+            }
         });
     }
 

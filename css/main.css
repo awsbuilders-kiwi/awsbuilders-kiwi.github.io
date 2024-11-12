@@ -8,6 +8,12 @@
     --hover-color: #c0af7f;
     --mobile-breakpoint: 768px;
     --small-mobile-breakpoint: 480px;
+    --modal-bg: #2a2a2a;
+    --modal-header-bg: #3a3a3a;
+    --modal-text: #ffffff;
+    --modal-shadow: rgba(0, 0, 0, 0.3);
+    --modal-border: rgba(255, 255, 255, 0.1);
+    --modal-close-hover: #ff4444;    
 }
 
 * {
