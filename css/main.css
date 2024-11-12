@@ -37,7 +37,7 @@ html, body {
 .header-bar {
     /* Base layout */
     position: relative;
-    width: 95vw;
+    width: 100%;
     min-width: 320px;
     min-height: 6em;
     height: 1vh; /* Set height based on viewport height for flexible scaling */
@@ -335,6 +335,12 @@ a:visited {
 
 /* Base styles remain the same */
 /* Media Queries for different screen sizes - Responsive Layout */
+@media screen and (max-width: 1200px) {
+    .container {
+        flex-direction: column;
+    }
+}
+
 /* Large devices (iPad Pro, larger tablets) */
 @media screen and (max-width: 1024px) {
     .container {
