@@ -7,13 +7,13 @@ const headers = [
     `<table width=100%><tr bgcolor=white><Td>YOUR AMAZING VOLUNTEER COMMUNITY PRESENTERS</Td></tr></table>
     <div class=\"bannerrow\">
       <div class=\"presenterbannercolumn\">
-        <a href=\"https://dunlop.geek.nz\"><img src=\"images/presenter-banners/younext.png\"></a>
+        <img src=\"images/presenter-banners/younext.png\"></a>
       </div>
       <div class=\"presenterbannercolumn\">
-        <img src=\"images/presenter-banners/2.png\">
+        <a href=\"https://www.chiwaichan.co.nz\"><img src=\"images/presenter-banners/2.png\"></a>
       </div>
       <div class=\"presenterbannercolumn\">
-        <img src=\"images/presenter-banners/4.png\">
+        <a href=\"https://awsfanboy.kiwi\"><img src=\"images/presenter-banners/4.png\"></a>
       </div>
     </div>`,
 
@@ -22,13 +22,13 @@ const headers = [
     `<table width=100%><tr bgcolor=white><Td>YOUR AMAZING VOLUNTEER COMMUNITY PRESENTERS</Td></tr></table>
     <div class=\"bannerrow\">
       <div class=\"presenterbannercolumn\">
-        <img src=\"images/presenter-banners/3.png\">
+        <a href=\"https://chamila.dev/blog\"><img src=\"images/presenter-banners/3.png\"></a>
       </div>
       <div class=\"presenterbannercolumn\">
-        <img src=\"images/presenter-banners/5.png\">
+        <a href=\"https://linkedin.com/ramstack\"><img src=\"images/presenter-banners/5.png\"></a>
       </div>
       <div class=\"presenterbannercolumn\">
-        <img src=\"images/presenter-banners/1.png\">
+        <a href=\"https://dunlop.geek.nz\"><img src=\"images/presenter-banners/1.png\"></a> 
       </div>
     </div>`,
 
