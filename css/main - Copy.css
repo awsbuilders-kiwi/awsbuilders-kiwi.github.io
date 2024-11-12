@@ -1,0 +1,229 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #FF9900;
+    --secondary-color-dark: #E88B00;
+    --background-color: #000000;
+    --text-color: #2c3e50;
+    --border-color: #dcdde1;
+    --hover-color: #c0af7f;
+    --mobile-breakpoint: 768px;
+    --small-mobile-breakpoint: 480px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+}
+
+html, body {
+    color: white;
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Style */
+.header-bar {
+    padding: 0em 0;
+    position: relative;
+    overflow: hidden;
+    min-height: 12em;
+    height: auto;
+    min-width: 320px;
+    width: 100vw; /* viewport width */
+    background-color: #000000;
+    color: black;
+    text-align: center;
+    background-image: linear-gradient(rgba(15, 11, 11, 0.339), rgba(83, 81, 81, 0.762)), url("../images/awsbuilders.kiwi.original.1024x1024.jpg");
+    background-size: cover;
+    background-position: 75% 60%;
+    background-repeat: no-repeat;
+}
+
+.header-bar-content {
+    position: relative;
+    animation: slide-in 1s ease forwards;
+}
+
+  @keyframes slide-in {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+h1 {
+    font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+    color: white;
+}
+
+h1.hb {
+    font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+    color: rgb(255, 254, 254);
+    font-weight: bolder;
+}
+
+.heading_subtitle {
+    font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    font-size:18pt;
+}
+
+.presenterbannercolumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: fit-content;
+    overflow: hidden; /* Prevents content from spilling out */
+}
+
+.presenterbannercolumn img {
+    max-width: 100%;
+    height: auto;
+    object-fit: scale-down;
+}
+
+.bannerrow {
+    display: flex;
+}
+
+/* Main Container */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 100%;
+    min-width: 320px; /* Minimum width for smallest phones */
+}
+
+/* Column Styles */
+.column {
+    padding: 1em;
+    width: 100%; /* Full width by default on mobile */
+}
+
+section.column.middle {
+    padding: 0.02em;
+}
+
+.left, .right {
+    flex: 1;
+    background-color: var(--background-color);
+}
+
+.middle {
+    flex: 2;
+    background-color: var(--background-color);
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+}
+
+a {
+    color: white;
+}
+
+a:visited {
+    color: white;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: rgb(255, 255, 255);
+    margin: 5vh auto;
+    padding: 2rem;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    color: black;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    position: sticky;
+    top: 0;
+    background: white;
+    padding: 1rem;
+    z-index: 1;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-body {
+    padding: 1rem;
+}
+
+/* Media Queries for different screen sizes */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack columns vertically on mobile */
+    }
+    
+    .left, .middle, .right {
+        flex: none;
+        width: 100%;
+    }
+
+    /* Adjust header height for mobile */
+    .header-bar {
+        height: 120px; /* Smaller height on mobile */
+    }
+
+    /* Adjust any iframe content */
+    iframe {
+        width: 100% !important;
+        max-width: 350px;
+        height: auto;
+    }
+
+    /* Adjust images to be responsive */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Small mobile devices */
+@media screen and (max-width: 480px) {
+    .header-bar {
+        height: 100px; /* Even smaller height for very small devices */
+    }
+
+    .column {
+        padding: 0.5em; /* Reduce padding on very small screens */
+    }
+}
+
+.discord-widget-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em 0;
+}

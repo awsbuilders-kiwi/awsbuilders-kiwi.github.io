@@ -35,26 +35,27 @@
         <section class="column left">
             <!-- Left Column Content -->
             <center>
-                <h1>Welcome!</h1>
-                This site acts as a gateway to a discord server.<br /r>
-                Discord community servers have great conferencing cabilities for tech communities!<br />
-                For presenters, can help them run their own person remote presentations about building on AWS, and for builders in general a means to learn more from the community via the events calander. The cal also includes the AWS Twitch channel events to look out for.<br />
+                <h1>! Welcome !</h1>
+                <hr>
+                <br />
+                <li>This site acts as a gateway to a discord server.</li><br /r>
+                <li>The events calender on the right is up to date with both events from discord and the aws twitch channel.</li><br /r>
+                <li>Anyone can join the server for free!</li><br /r>
+                <li>Anyone can use the server for remote presentations!</li><br /r>
             </center>
             <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            We look forward to seeing you there and what great things you want to tell others about :)
-            <br />
-            <br />
-            <br />
-            <br />
+            <hr>
             <br />
             <center>
-                <h1>Help with the Run Costs</h1>
-                <img src="images/swag-outlet.png" height="70%" width="70%" style="border-radius: 10%;">
+                <h1>Discord Server</h1>
+                Join the discord server by clicking below:
             </center>
+            <center>
+                <div class="circle-image">
+                    <a href="https://discord.gg/4UJfJ755T8" target="_blank"><img src="images/awsbuilders.kiwi.logo_800x800-cm.png"></a>
+                </div>
+            </center>
+
         </section>
         <section class="column middle">
             <!-- Middle Column Content -->
@@ -79,10 +80,9 @@
         <section class="column right">
             <!-- Right Column Content -->
             <center>
-                <h1>Discord Server</h1>
-                Join the discord server by clicking below:
+                <h1>To help with the run costs</h1>
+                <a href="https://swag.awsbuilders.kiwi" target="_blank"><img src="images/swag-outlet.png" class="swagimage"></a>
             </center>
-            <center><img src="images/awsbuilders.kiwi.logo_800x800-cm.png" width="40%" height="40%"></center>
             <div class="discord-widget-container">
                 <iframe src="https://discord.com/widget?id=1157469922633466058&theme=dark" 
                         width="100%" 
@@ -96,51 +96,52 @@
         </section>
     </main>
 
-<div>
-    <!-- Day View Modal -->
-    <div id="dayViewModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 id="dayViewDate"></h3>
-                <span class="close-btn">&times;</span>
-            </div>
-            <div class="time-slots"></div>
-        </div>
-    </div>
-
-    <!-- Event Details Modal -->
-    <div id="eventDetailsModal" class="modal">
-        <div class="modal-content">
-            <div id="eventImage" class="event-image"></div>
-            <div class="modal-body">
+    <!-- Main Modal Popups -->
+    <div>
+        <!-- Day View Modal -->
+        <div id="dayViewModal" class="modal">
+            <div class="modal-content">
                 <div class="modal-header">
-                    <div class="event-header-content">
-                        <div class="event-title-container">
-                            <h3 id="eventTitle"></h3>
-                        </div>
-                    </div>
+                    <h3 id="dayViewDate"></h3>
                     <span class="close-btn">&times;</span>
                 </div>
-                <div class="event-details">
-                    <p id="eventCreator"></p>
-                    <p id="eventDescription"></p>
-                    <p id="eventTime"></p>
-                    <p id="eventRecurrence"></p>
+                <div class="time-slots"></div>
+            </div>
+        </div>
+
+        <!-- Event Details Modal -->
+        <div id="eventDetailsModal" class="modal">
+            <div class="modal-content">
+                <div id="eventImage" class="event-image"></div>
+                <div class="modal-body">
+                    <div class="modal-header">
+                        <div class="event-header-content">
+                            <div class="event-title-container">
+                                <h3 id="eventTitle"></h3>
+                            </div>
+                        </div>
+                        <span class="close-btn">&times;</span>
+                    </div>
+                    <div class="event-details">
+                        <p id="eventCreator"></p>
+                        <p id="eventDescription"></p>
+                        <p id="eventTime"></p>
+                        <p id="eventRecurrence"></p>
+                    </div>
+                    <div id="discordLinks"></div>
+                    <div id="calendarLinks"></div>
                 </div>
-                <div id="discordLinks"></div>
-                <div id="calendarLinks"></div>
+            </div>
+        </div>
+
+        <!-- Error Details Modal -->
+        <div id="errorModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;
+                <h2>Error</h2>
+                <p id="errorMessage"></p>
             </div>
         </div>
     </div>
-
-    <!-- Error Details Modal -->
-    <div id="errorModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;
-            <h2>Error</h2>
-            <p id="errorMessage"></p>
-        </div>
-    </div>
-</div>
 </body>
 </html>

@@ -9,6 +9,7 @@
     flex-direction: column;
     position: relative;
     z-index: 1;
+    overflow-x: scroll;
 }
 
 .calendar-header {
