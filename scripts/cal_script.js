@@ -324,6 +324,16 @@ class Calendar {
         const dayViewDate = document.getElementById('dayViewDate');
         const timeSlots = document.querySelector('.time-slots');
 
+        // Sort events to put Discord events first
+        const sortedEvents = events.sort((a, b) => {
+            if (a.platform === b.platform) {
+                // If platforms are the same, sort by time
+                return new Date(a.start_time) - new Date(b.start_time);
+            }
+            // Put Discord events first
+            return a.platform === 'discord' ? -1 : 1;
+        });
+        
         dayViewDate.textContent = date.toLocaleDateString('en-NZ', {
             weekday: 'long',
             year: 'numeric',
