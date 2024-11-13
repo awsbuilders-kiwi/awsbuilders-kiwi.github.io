@@ -30,7 +30,7 @@ html, body {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
-    font-size: 16pt;
+    font-size: 14pt;
 }
 
 /* Header Bar Styles */
@@ -379,6 +379,25 @@ a:visited {
     .column {
         padding: 0.75em;
     }
+
+    .left, .middle, .right {
+        flex: 1; /* Allow elements to grow and shrink */
+        min-width: 0; /* Prevent overflow issues */
+        width: auto; /* Let the width be determined by the flex container */
+    }
+
+    .calendar-day {
+        overflow: hidden; /* or auto if you want scrolling */
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+
+    /* For the event items */
+    .calendar-event {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
 }
 
 /* iPhone 15 Pro, 14 Pro, 13 Pro, 12 Pro */
