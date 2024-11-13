@@ -1,5 +1,7 @@
 class Calendar {
     constructor() {
+        this.isLocalDev = true; // Set to true for local development
+         
         this.events = [];
         this.expandedEvents = null;
         this.currentDate = new Date();
@@ -15,14 +17,31 @@ class Calendar {
     }
 
     async fetchAllEvents() {
-        await Promise.all([
-            this.fetchDiscordEvents(),
-            this.fetchAWSTwitchChannelEvents()
-        ]);
+        if (this.isLocalDev) {
+            await this.fetchLocalTestEvents();
+        } else {
+            await Promise.all([
+                this.fetchDiscordEvents(),
+                this.fetchAWSTwitchChannelEvents()
+            ]);
+        }
         console.log('Discord events:', this.discordEvents.length);
         console.log('Twitch events:', this.twitchEvents.length);
         await this.generateAllEvents();
         this.renderCalendar();
+    }
+
+    // Add this new method for local testing
+    async fetchLocalTestEvents() {
+        try {
+            const response = await fetch('http://localhost:6969/api/events');
+            const data = await response.json();
+            this.discordEvents = data.discordEvents || [];
+            this.twitchEvents = data.twitchEvents || [];
+        } catch (error) {
+            console.error('Error loading local test events:', error);
+            this.showError('Failed to load local test events');
+        }
     }
 
     initializeErrorHandling() {

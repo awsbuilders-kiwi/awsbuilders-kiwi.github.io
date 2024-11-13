@@ -118,11 +118,24 @@ html, body {
     }
 }
 
-.swagimage{
+.swagimage {
+    display: flex;
     border-radius: 10%;
     transition: transform 0.3s ease;
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 20vw;
+    max-height: 20vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.discordinviteimage {
+    transition: transform 0.3s ease;
+    max-width: 100vw;
+    max-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 }
 
 /* Main Container */
@@ -237,10 +250,8 @@ a:visited {
 /* discord widget */
 .discord-widget-container {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1em 0;
+    display: relative;
+
 }
 
 .circle-image {
@@ -248,7 +259,7 @@ a:visited {
     height: 200px;
     border-radius: 50%;
     position: relative;
-    display: inline-block;
+    display: flex;
     margin: 20px;
 }
 
@@ -383,13 +394,11 @@ a:visited {
     .left, .middle, .right {
         flex: 1; /* Allow elements to grow and shrink */
         min-width: 0; /* Prevent overflow issues */
-        width: auto; /* Let the width be determined by the flex container */
+        width: 100vw; /* Let the width be determined by the flex container */
     }
 
     .calendar-day {
-        overflow: hidden; /* or auto if you want scrolling */
-        word-wrap: break-word;
-        word-break: break-all;
+        overflow: auto; /* or auto if you want scrolling */
     }
 
     /* For the event items */
@@ -452,12 +461,33 @@ a:visited {
     }
 
     .column {
-        padding: 0.5em;
+        padding: 0.5rem;
     }
 
     img {
-        max-width: 100%;
+        max-width: 100vw;
         height: auto;
+    }
+
+    .swagimage{
+        border-radius: 10%;
+        transition: transform 0.3s ease;
+        max-width: 80vw;
+        max-height: 50vh;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+    .discordinviteimage{
+        border-radius: 10%;
+        transition: transform 0.3s ease;
+        max-width: 50vw;
+        max-height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
     }
 }
 
