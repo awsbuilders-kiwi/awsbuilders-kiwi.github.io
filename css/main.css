@@ -200,7 +200,7 @@ section.column.middle {
 .left {
     flex: 1;
     background-color: var(--background-color);
-
+    font-size: clamp(8px, 6vw, 16px);
 }
 
 .right {
