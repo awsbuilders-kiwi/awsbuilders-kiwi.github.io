@@ -155,32 +155,12 @@ h1.hb {
     }
 }
 
-.swagimage {
-    display: flex;
-    border-radius: 10%;
-    transition: transform 0.3s ease;
-    max-width: 20vw;
-    max-height: 20vh;
-    justify-content: center;
-    align-items: center;
-}
-
-.discordinviteimage {
-    transition: transform 0.3s ease;
-    max-width: 100vw;
-    max-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-}
-
 /* Main Container */
 .container {
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
-    width: 100%;
+    width: 100vw;
     min-width: 320px; /* Minimum width for smallest phones */
     /* Prevent overflow */
     overflow: hidden;
@@ -222,6 +202,28 @@ a {
 a:visited {
     color: white;
 }
+
+/* images */
+.swagimage {
+    display: flex;
+    border-radius: 10%;
+    transition: transform 0.3s ease;
+    max-width: 20vw;
+    max-height: 20vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.discordinviteimage {
+    transition: transform 0.3s ease;
+    max-width: 100vw;
+    max-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
 
 /* MODALS */
 .modal {
