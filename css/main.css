@@ -76,25 +76,18 @@ h1.hb {
 
 /* Header Bar Styles */
 .header-bar {
+    display: block;
     /* Base layout */
-    position: relative;
     min-width: 320px;
-    min-height: 6em;
-    height: 1vh; /* Set height based on viewport height for flexible scaling */
-    padding: 2em; /* Adjust padding to control inner spacing */
-    margin: 10px;
+    max-height: 30vh;
+    height: 30vh; /* Set height based on viewport height for flexible scaling */
+    margin: 5px;
 
     /* Prevent overflow */
     overflow: hidden;
 
     /* Content alignment */
-    display: flex;
-    justify-content: center;
     align-items: center;
-
-    /* Text styling */
-    color: black;
-    text-align: center;
 
     /* Background styling */
     background-color: #000000;
@@ -105,46 +98,57 @@ h1.hb {
 }
 
 .header-bar-content {
-    /* Layout */
-    position: relative;
-    width: 100%;
-
-    /* Animation */
-    animation: slide-in 1s ease forwards;
-
-    /* Prevent overflow */
-    overflow: hidden;
-}
-
-.bannerrow {
     display: flex;
-}
-
-.presenterbannercolumn {
-    /* Layout */
-    flex: 1;
-
-    /* Content alignment */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    padding: 5px;
-
-    /* Prevent overflow */
+    flex-direction: column; /* Stack items vertically */
     overflow: hidden;
-}
-
-.presenterbannercolumn img {
     width: 100%;
     height: 100%;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.presenter-content {
+    display: flex;
+    flex-direction: row; /* Stack items vertically */
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.presenter-column-1{
+    flex: 1;
+    padding 2px;
+    align-content: center;
+    justify-content: center;
+    box-sizing: border-box; /* Include padding and border in column width */
+}
+
+.presenter-column-2 {
+    flex: 1;
+    padding 2px;
+    align-content: center;
+    justify-content: center;
+    box-sizing: border-box; /* Include padding and border in column width */
+}
+
+.presenter-column-1 img,
+.presenter-column-2 img 
+{
+    width: 95%; /* Adjust width as desired */
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    margin: auto; /* Centers the image horizontally */
+    display: block; /* Required for margin auto to work on images */
     object-fit: contain;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
 }
 
 /* Optional hover effect */
-.presenterbannercolumn img:hover {
+.presenter-column-1,
+.presenter-column-2, 
+img:hover {
     transform: scale(1.05);
 }
 
@@ -159,48 +163,37 @@ h1.hb {
     }
 }
 
+.logo-image {
+    width: 100%; /* Make image width match container width */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Prevents image from exceeding container width */
+}
+
 /* Main Container */
 .container {
-    /*
     display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    width: 100vw;
-    min-width: 320px; /* Minimum width for smallest phones */
-    /* Prevent overflow */
-    display: flex;
-    flex-wrap: wrap;
     margin: 10px;
-    padding: 0em;
-    min-width: 320px;
     overflow: hidden;
-    justify-content: right;
 }
 
 .left {
     flex: 1;
     background-color: var(--background-color);
     font-size: clamp(8px, 6vw, 16px);
+    padding-right: 12px;
 }
+
 .middle {
-    flex: 2;
+    flex: 1;
     background-color: var(--background-color);
+    font-size: clamp(8px, 6vw, 16px);
 }
 
 .right {
     flex: 0.5; /* Make right column half the width of left column */
     background-color: var(--background-color);
-}
-
-/* Column Styles */
-.column {
-    padding: 1em;
-    width: 100vw; /* Full width by default on mobile */
-}
-
-section.column.middle {
-    padding: 0.02em;
-    margin-bottom: auto;
+    font-size: clamp(8px, 6vw, 16px);
+    padding-left: 12px;
 }
 
 /* links */
@@ -214,11 +207,10 @@ a:visited {
 
 /* images */
 .swagimage {
-    display: flex;
     border-radius: 10%;
     transition: transform 0.3s ease;
-    max-width: 15vw;
-    min-width: 5vw;
+    max-width: 300px;
+    max-height: 300px;
     justify-content: center;
     align-items: center;
 }
@@ -281,10 +273,8 @@ a:visited {
     /*min-width: 5vw;
     max-width: 10vw;
     height: 500;*/
-    display: flex;
-    max-width: 15vw;
-    min-width: 5vw;
-    height: 80vh;
+    min-width: 300px;
+    min-height: 600px;
     justify-content: center;
     align-items: center;
     /* max-width: 250px; */
@@ -379,53 +369,44 @@ a:visited {
 }
 
 /* Media Queries for different screen sizes - Responsive Layout */
-/* Large devices (iPad Pro, larger tablets) */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1110px) {
+    .container {
+        overflow: auto;
+        flex-direction: column;
+        height: 500px;
+    }
+
+    .right{
+        flex: 1;
+    }
+
+    .calendar-container {
+        grid-template-columns: repeat(4, minmax(80px, 1fr)); /* Adjust to four columns on smaller screens */
+    }
+
+    .header-bar-content{
+        flex-direction: column;
+    }
+    .presenter-column-1,
+    .presenter-column-2,
+    .presenter-column-3 {
+        flex: 1 1 45%; /* Each column takes 45% of the width */
+    }
 }
+@media (max-width: 480px) {
+    .container {
+        overflow: auto;
+    }
 
-/* Medium devices (iPad Mini, small tablets) */
-@media screen and (max-width: 768px) {
-
-}
-
-/* iPhone 15 Pro Max, 14 Pro Max, 13 Pro Max, 12 Pro Max */
-@media screen and (device-width: 430px) and (device-height: 932px),
-    screen and (device-width: 428px) and (device-height: 926px) {
-
-}
-
-/* iPhone 15 Pro, 14 Pro, 13 Pro, 12 Pro */
-@media screen and (device-width: 393px) and (device-height: 852px),
-    screen and (device-width: 390px) and (device-height: 844px) {
-
-}
-
-/* iPhone 15, 14, 13, 12 */
-@media screen and (device-width: 390px) and (device-height: 844px) {
-
-}
-
-/* iPhone 15 Plus, 14 Plus, 13 Plus, 12 Plus */
-@media screen and (device-width: 428px) and (device-height: 926px) {
-
-}
-
-/* iPhone SE (3rd gen, 2nd gen) and iPhone 8 */
-@media screen and (device-width: 375px) and (device-height: 667px) {
-
-}
-
-/* General small mobile devices (including older iPhones) */
-@media screen and (max-width: 480px) {
-
-}
-
-/* Extra small devices */
-@media screen and (max-width: 320px) {
-
-}
-
-/* Landscape orientation adjustments */
-@media screen and (max-width: 932px) and (orientation: landscape) {
-
+    .calendar-container {
+      grid-template-columns: repeat(2, minmax(100px, 1fr)); /* Stack items more compactly */
+    }
+    .header-bar-content{
+        flex-direction: column;
+    }
+    .presenter-column-1,
+    .presenter-column-2,
+    .presenter-column-3 {
+        flex: 1 1 100%; /* Each column takes full width on very small screens */
+    }
 }

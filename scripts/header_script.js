@@ -2,39 +2,34 @@
 //    "<center><img src=\"images/AWSBUILDERSKIWI.png\"></center><text class=\"heading_subtitle\">NZs Premiere Tech Connection Hub! Link up with Presenters and Members today!</text>",
 
 const headers = [
-    "<br /><h2>! Mi Casa, Su Casa !<br>Discord server available for your remote presentations</h2>",
+    "<br /><h1>! Mi Casa, Su Casa !<br>Discord server available for your remote presentations</h1>",
 
-    `<table width=100%><tr bgcolor=white><Td>YOUR AMAZING VOLUNTEER COMMUNITY PRESENTERS</Td></tr></table>
-    <div class=\"bannerrow\">
-      <div class=\"presenterbannercolumn\">
-        <img src=\"images/presenter-banners/younext.png\"></a>
-      </div>
-      <div class=\"presenterbannercolumn\">
+    `<div class=\"presenter-content\"><div class=\"presenter-column-1\">
         <a href=\"https://www.chiwaichan.co.nz\" target="_blank"><img src=\"images/presenter-banners/2.png\"></a>
       </div>
-      <div class=\"presenterbannercolumn\">
+      <div class=\"presenter-column-2\">
         <a href=\"https://awsfanboy.kiwi\" target="_blank"><img src=\"images/presenter-banners/4.png\"></a>
-      </div>
-    </div>`,
+      </div></div>`,
 
     "<br /><h1>Connect with your community on Discord today</h1>",
 
-    `<table width=100%><tr bgcolor=white><Td>YOUR AMAZING VOLUNTEER COMMUNITY PRESENTERS</Td></tr></table>
-    <div class=\"bannerrow\">
-      <div class=\"presenterbannercolumn\">
+    `<div class=\"presenter-content\"><div class=\"presenter-column-1\">
         <a href=\"https://chamila.dev/blog\" target="_blank"><img src=\"images/presenter-banners/3.png\"></a>
       </div>
-      <div class=\"presenterbannercolumn\">
+      <div class=\"presenter-column-2\">
         <a href=\"https://www.linkedin.com/in/ramstack/\" target="_blank"><img src=\"images/presenter-banners/5.png\"></a>
+      </div></div>`,
+    
+    `<div class=\"presenter-content\"><div class=\"presenter-column-1\">
+        <img src=\"images/presenter-banners/younext.png\"></a>
       </div>
-      <div class=\"presenterbannercolumn\">
+      <div class=\"presenter-column-2\">
         <a href=\"https://dunlop.geek.nz\" target="_blank"><img src=\"images/presenter-banners/1.png\"></a> 
-      </div>
-    </div>`,
+      </div></div>`,
 
     "<br /><h1>Discord has a powerful event management system to host your conference style remote presentations.</h1>",
 
-    "<center><img src=\"images/AWSBUILDERSKIWI.png\"></center><text class=\"heading_subtitle\">NZs Premiere Tech Connection Hub! Link up with Presenters and Members today!</text>",
+    "<img src=\"images/AWSBUILDERSKIWI.png\" class=\"logo-image\"><br /><br /><h2>NZs Premiere Tech Connection Hub! Link up with Presenters and Members today!<h2>",
 ];
   
   let currentIndex = 0;
@@ -54,5 +49,5 @@ const headers = [
   }
   
   // Change header every 3 seconds
-  setInterval(changeHeader, 5000);
+  setInterval(changeHeader, 2000);
   
