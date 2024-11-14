@@ -56,6 +56,7 @@
     display: flex;
     flex-direction: column;
     min-width: 120px;
+    font-size: .5rem;
 }
 
 .calendar-day.empty {
@@ -78,9 +79,9 @@
     gap: 8px;
     background: var(--secondary-color);
     color: white;
-    padding: 0.5rem;
+    padding: 0.3rem;
     border-radius: 5px;
-    margin-top: 0.5rem;
+    margin-top: 0.15rem;
     cursor: pointer;
 }
 
