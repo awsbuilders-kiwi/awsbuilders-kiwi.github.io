@@ -383,173 +383,54 @@ a:visited {
     transition: transform 0.3s ease;
 }
 
-/* Base styles remain the same */
 /* Media Queries for different screen sizes - Responsive Layout */
-@media screen and (max-width: 1200px) {
-    body {
-        font-size: 10pt;
-    }
-    .container {
-        flex-direction: column;
-    }
-}
-
 /* Large devices (iPad Pro, larger tablets) */
 @media screen and (max-width: 1024px) {
-    .container {
-        flex-direction: column;
-    }
 }
 
 /* Medium devices (iPad Mini, small tablets) */
 @media screen and (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
 
-    .left, .middle, .right {
-        flex: none;
-        width: 100%;
-    }
-
-    .header-bar {
-        height: 120px;
-    }
-
-    iframe {
-        width: 100% !important;
-    }
 }
 
 /* iPhone 15 Pro Max, 14 Pro Max, 13 Pro Max, 12 Pro Max */
 @media screen and (device-width: 430px) and (device-height: 932px),
     screen and (device-width: 428px) and (device-height: 926px) {
-    .header-bar {
-        height: 110px;
-    }
-
-    .column {
-        padding: 0.75em;
-    }
-
-    .left, .middle, .right {
-        flex: 1; /* Allow elements to grow and shrink */
-        min-width: 0; /* Prevent overflow issues */
-        width: 100vw; /* Let the width be determined by the flex container */
-    }
-
-    .calendar-day {
-        overflow: auto; /* or auto if you want scrolling */
-    }
-
-    /* For the event items */
-    .calendar-event {
-        max-width: 100%;
-        box-sizing: border-box;
-    }
 
 }
 
 /* iPhone 15 Pro, 14 Pro, 13 Pro, 12 Pro */
 @media screen and (device-width: 393px) and (device-height: 852px),
     screen and (device-width: 390px) and (device-height: 844px) {
-    .header-bar {
-        height: 105px;
-    }
 
-    .column {
-        padding: 0.6em;
-    }
 }
 
 /* iPhone 15, 14, 13, 12 */
 @media screen and (device-width: 390px) and (device-height: 844px) {
-    .header-bar {
-        height: 100px;
-    }
 
-    .column {
-        padding: 0.6em;
-    }
 }
 
 /* iPhone 15 Plus, 14 Plus, 13 Plus, 12 Plus */
 @media screen and (device-width: 428px) and (device-height: 926px) {
-    .header-bar {
-        height: 110px;
-    }
 
-    .column {
-        padding: 0.7em;
-    }
 }
 
 /* iPhone SE (3rd gen, 2nd gen) and iPhone 8 */
 @media screen and (device-width: 375px) and (device-height: 667px) {
-    .header-bar {
-        height: 90px;
-    }
 
-    .column {
-        padding: 0.5em;
-    }
 }
 
 /* General small mobile devices (including older iPhones) */
 @media screen and (max-width: 480px) {
-    .header-bar {
-        height: 100px;
-    }
 
-    .column {
-        padding: 0.5rem;
-    }
-
-    img {
-        max-width: 100vw;
-        height: auto;
-    }
-
-    .swagimage{
-        border-radius: 10%;
-        transition: transform 0.3s ease;
-        max-width: 80vw;
-        max-height: 50vh;
-        justify-content: center;
-        align-items: center;
-        display: flex;
-    }
-
-    .discordinviteimage{
-        border-radius: 10%;
-        transition: transform 0.3s ease;
-        max-width: 50vw;
-        max-height: 50vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0 auto;
-    }
 }
 
 /* Extra small devices */
 @media screen and (max-width: 320px) {
-    .header-bar {
-        height: 80px;
-    }
 
-    .column {
-        padding: 0.4em;
-    }
 }
 
 /* Landscape orientation adjustments */
 @media screen and (max-width: 932px) and (orientation: landscape) {
-    .header-bar {
-        height: 80px;
-    }
 
-    .column {
-        padding: 0.5em;
-    }
 }
