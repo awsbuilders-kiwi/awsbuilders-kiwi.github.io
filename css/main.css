@@ -30,7 +30,7 @@ html, body {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
-
+    line-height: 1.5;
 }
 
 html {
@@ -39,6 +39,10 @@ html {
 
 body {
     font-size: 1rem;
+}
+
+p {
+    white-space: normal;
 }
 
 /* headers */
@@ -157,24 +161,20 @@ h1.hb {
 
 /* Main Container */
 .container {
+    /*
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
     width: 100vw;
     min-width: 320px; /* Minimum width for smallest phones */
     /* Prevent overflow */
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    padding: 0em;
+    min-width: 320px;
     overflow: hidden;
-}
-
-/* Column Styles */
-.column {
-    padding: 1em;
-    width: 100%; /* Full width by default on mobile */
-}
-
-section.column.middle {
-    padding: 0.02em;
-    margin-bottom: auto;
+    justify-content: right;
 }
 
 .left {
@@ -182,16 +182,25 @@ section.column.middle {
     background-color: var(--background-color);
     font-size: clamp(8px, 6vw, 16px);
 }
+.middle {
+    flex: 2;
+    background-color: var(--background-color);
+}
 
 .right {
     flex: 0.5; /* Make right column half the width of left column */
     background-color: var(--background-color);
-    margin-left: 2em;
 }
 
-.middle {
-    flex: 2;
-    background-color: var(--background-color);
+/* Column Styles */
+.column {
+    padding: 1em;
+    width: 100vw; /* Full width by default on mobile */
+}
+
+section.column.middle {
+    padding: 0.02em;
+    margin-bottom: auto;
 }
 
 /* links */
@@ -208,8 +217,8 @@ a:visited {
     display: flex;
     border-radius: 10%;
     transition: transform 0.3s ease;
-    max-width: 20vw;
-    max-height: 20vh;
+    max-width: 15vw;
+    min-width: 5vw;
     justify-content: center;
     align-items: center;
 }
@@ -223,7 +232,6 @@ a:visited {
     align-items: center;
     margin: 0 auto;
 }
-
 
 /* MODALS */
 .modal {
@@ -270,9 +278,21 @@ a:visited {
 
 /* discord widget */
 .discord-widget-container {
-    width: 100%;
+    width: 100vw;
     display: relative;
+}
 
+.discord-widget {
+    /*min-width: 5vw;
+    max-width: 10vw;
+    height: 500;*/
+    display: flex;
+    max-width: 15vw;
+    min-width: 5vw;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+    /* max-width: 250px; */
 }
 
 .circle-image {
