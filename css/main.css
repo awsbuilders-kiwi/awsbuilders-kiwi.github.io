@@ -281,8 +281,8 @@ a:visited {
 }
 
 .circle-image {
-    width: 200px;  /* Adjust size as needed */
-    height: 200px;
+    width: 100px;  /* Adjust size as needed */
+    height: 100px;
     border-radius: 50%;
     position: relative;
     display: flex;
