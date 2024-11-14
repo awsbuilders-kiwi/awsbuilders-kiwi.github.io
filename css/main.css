@@ -38,9 +38,37 @@ html {
 }
 
 body {
-    font-size: calc(1rem + 2vw);
+    font-size: 1rem;
 }
 
+/* headers */
+h1 {
+    font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+    color: white;
+    font-weight: bolder;
+    font-size: clamp(14px, 6vw, 24px);
+}
+
+h2{
+    font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+    color: white;
+    font-weight: bold;
+    font-size: clamp(12px, 6vw, 16px);
+}
+
+h3{
+    font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+    color: white;
+    font-weight: normal;
+    font-size: clamp(8px, 6vw, 14px);
+}
+
+/* delete this eventually */
+h1.hb {
+    font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+    color: rgb(255, 254, 254);
+    font-weight: bolder;
+}
 
 /* Header Bar Styles */
 .header-bar {
@@ -186,25 +214,7 @@ section.column.middle {
     background-color: var(--background-color);
 }
 
-/* text and links and shit */
-h1 {
-    font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
-    color: white;
-}
-
-h1.hb {
-    font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
-    color: rgb(255, 254, 254);
-    font-weight: bolder;
-}
-
-.heading_subtitle {
-    font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
-    color: rgb(255, 255, 255);
-    font-weight: bolder;
-    font-size: calc(2rem + 3vw);
-}
-
+/* links */
 a {
     color: white;
 }

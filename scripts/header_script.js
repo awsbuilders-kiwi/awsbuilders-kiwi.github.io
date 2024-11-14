@@ -2,7 +2,7 @@
 //    "<center><img src=\"images/AWSBUILDERSKIWI.png\"></center><text class=\"heading_subtitle\">NZs Premiere Tech Connection Hub! Link up with Presenters and Members today!</text>",
 
 const headers = [
-    "<br /><h1 class=\"hb\">! Mi Casa, Su Casa !<br>Discord server available for your remote presentations</h1>",
+    "<br /><h2>! Mi Casa, Su Casa !<br>Discord server available for your remote presentations</h2>",
 
     `<table width=100%><tr bgcolor=white><Td>YOUR AMAZING VOLUNTEER COMMUNITY PRESENTERS</Td></tr></table>
     <div class=\"bannerrow\">
@@ -17,7 +17,7 @@ const headers = [
       </div>
     </div>`,
 
-    "<br /><h1 class=\"hb\">Connect with your community on Discord today</h1>",
+    "<br /><h1>Connect with your community on Discord today</h1>",
 
     `<table width=100%><tr bgcolor=white><Td>YOUR AMAZING VOLUNTEER COMMUNITY PRESENTERS</Td></tr></table>
     <div class=\"bannerrow\">
@@ -32,7 +32,7 @@ const headers = [
       </div>
     </div>`,
 
-    "<br /><h1 class=\"hb\">Discord has a powerful event management system to host your conference style remote presentations.</h1>",
+    "<br /><h1>Discord has a powerful event management system to host your conference style remote presentations.</h1>",
 
     "<center><img src=\"images/AWSBUILDERSKIWI.png\"></center><text class=\"heading_subtitle\">NZs Premiere Tech Connection Hub! Link up with Presenters and Members today!</text>",
 ];
