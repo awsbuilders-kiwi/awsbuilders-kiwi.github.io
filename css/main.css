@@ -277,12 +277,7 @@ a:visited {
 }
 
 /* discord widget */
-.discord-widget-container {
-    width: 100vw;
-    display: relative;
-}
-
-.discord-widget {
+    .discord-widget {
     /*min-width: 5vw;
     max-width: 10vw;
     height: 500;*/
