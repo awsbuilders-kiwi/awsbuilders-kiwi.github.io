@@ -34,7 +34,7 @@ html, body {
 }
 
 html {
-    font-size: 14pt;
+    font-size: 18pt;
 }
 
 body {
@@ -99,6 +99,7 @@ h1.hb {
 
 .header-bar-content {
     display: flex;
+    position: relative;
     flex-direction: column; /* Stack items vertically */
     overflow: hidden;
     width: 100%;
@@ -184,7 +185,7 @@ img:hover {
 }
 
 .middle {
-    flex: 1;
+    flex: 2;
     background-color: var(--background-color);
     font-size: clamp(8px, 6vw, 16px);
 }
@@ -244,6 +245,7 @@ a:visited {
 
 .modal-header {
     display: flex;
+    max-width: 600px;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
@@ -258,7 +260,7 @@ a:visited {
 .modal-content {
     background: rgb(255, 255, 255);
     margin: 5vh auto;
-    padding: 2rem;
+    padding: 1rem;
     width: 90%;
     max-width: 600px;
     border-radius: 10px;
