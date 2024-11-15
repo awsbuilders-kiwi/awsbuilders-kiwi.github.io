@@ -184,7 +184,7 @@ img:hover {
 }
 
 .middle {
-    flex: 1;
+    flex: 2;
     background-color: var(--background-color);
     font-size: clamp(8px, 6vw, 16px);
 }
