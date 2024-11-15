@@ -1,3 +1,8 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // Instantiate Calendar after DOM is fully loaded
+    const calendar = new Calendar();
+});
+
 class Calendar {
     constructor() {
         this.isLocalDev = false; // Set to true for local development
@@ -9,7 +14,7 @@ class Calendar {
         this.initializeElements();
         this.addEventListeners();
         this.renderCalendar();
-        this.errorModal = document.getElementById('errorModal');
+        this.errorModal = document.getElementById('overlay');
         this.initializeErrorHandling();
         this.discordEvents = [];
         this.twitchEvents = [];
@@ -44,18 +49,21 @@ class Calendar {
         }
     }
 
+    // Initialize error handling for modal close functionality
     initializeErrorHandling() {
-        // Add error modal close handler
+        // Set up modal error handling
+        this.errorModal = document.getElementById('overlay'); // Select the overlay as the error modal
         const errorCloseBtn = this.errorModal.querySelector('.close-btn');
         errorCloseBtn.addEventListener('click', () => {
-            this.errorModal.style.display = 'none';
+            this.errorModal.style.display = 'none'; // Hide modal on close
         });
     }
 
+    // Show error modal with a custom error message
     showError(message) {
-        const errorMessage = document.getElementById('errorMessage');
+        const errorMessage = document.querySelector('.error-body'); // Select error body to insert message
         errorMessage.textContent = message;
-        this.errorModal.style.display = 'block';
+        this.errorModal.style.display = 'flex'; // Display the error modal
     }
 
     initializeElements() {
