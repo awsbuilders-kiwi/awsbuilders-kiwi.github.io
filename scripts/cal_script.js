@@ -58,11 +58,11 @@ class Calendar {
             this.errorModal.style.display = 'none'; // Hide modal on close
         });
     }
-
+ 
     // Show error modal with a custom error message
     showError(message) {
         const errorMessage = document.querySelector('.error-body'); // Select error body to insert message
-        errorMessage.textContent = message;
+        errorMessage.textContent = errorMessage.textContent + message;
         this.errorModal.style.display = 'flex'; // Display the error modal
     }
 
@@ -119,16 +119,14 @@ class Calendar {
             console.error('Error fetching Discord events:', error);
             this.discordEvents = [];
 
-            let userMessage = 'Unable to load Discord calendar events. ';
+            let userMessage = 'Unable to load Discord calendar events.\n ';
             if (error.message.includes('HTTP error')) {
                 userMessage += 'The server is not responding. Please try again later.';
             } else if (error.message.includes('Invalid data')) {
                 userMessage += 'The server returned unexpected data.';
-            } else {
-                userMessage += 'Please check your internet connection and try again.';
             }
 
-            this.showError(userMessage);
+            this.showError(userMessage); 
         }
     }
 
@@ -156,8 +154,6 @@ class Calendar {
                 userMessage += 'The server is not responding. Please try again later.';
             } else if (error.message.includes('Invalid data')) {
                 userMessage += 'The server returned unexpected data.';
-            } else {
-                userMessage += 'Please check your internet connection and try again.';
             }
 
             this.showError(userMessage);

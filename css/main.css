@@ -34,7 +34,7 @@ html, body {
 }
 
 html {
-    font-size: 14pt;
+    font-size: 18pt;
 }
 
 body {
@@ -99,6 +99,7 @@ h1.hb {
 
 .header-bar-content {
     display: flex;
+    position: relative;
     flex-direction: column; /* Stack items vertically */
     overflow: hidden;
     width: 100%;
@@ -184,7 +185,7 @@ img:hover {
 }
 
 .middle {
-    flex: 1;
+    flex: 2;
     background-color: var(--background-color);
     font-size: clamp(8px, 6vw, 16px);
 }

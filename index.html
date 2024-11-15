@@ -7,6 +7,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <title>AWSBuilders.kiwi - Your NZ AWS Community Hub</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/error_modal.css">
     <link rel="stylesheet" href="css/calendar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Aclonica" rel="stylesheet">
@@ -15,6 +16,7 @@
     <link rel="icon" type="image/png" href="/images/32x32/9844768/awsbuilders.kiwi.logo_800x800.png" sizes="32x32">
     <link rel="icon" type="image/png" href="/images/96x96/9844768/awsbuilders.kiwi.logo_800x800.png" sizes="96x96">
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/images/152x152/9844768/awsbuilders.kiwi.logo_800x800.png">
+
 </head>
 <body>
     <script src="scripts/cal_script.js"></script>
@@ -136,20 +138,32 @@
                 </div>
             </div>
 
-
             <!-- Error Details Modal -->
-            <div class="overlay" id="overlay">
-                <div class="error-popup">
-                  <div class="error-header">
-                    Error
-                    <button class="close-btn" onclick="closeErrorPopup()">×</button>
-                  </div>
-                  <div class="error-body">
-                    Oops! Something went wrong. Please try again later, or contact support if the problem persists.
-                  </div>
-                </div>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay">
+        <div class="error-popup">
+            <div class="error-header">
+                Error
+                <button class="close-btn" onclick="closeErrorPopup()">×</button>
+            </div>
+            <div class="error-body">
+                Oops! Something went wrong.
             </div>
         </div>
     </div>
+
+    <!-- Add JavaScript for overlay functionality -->
+    <script>
+        function showErrorPopup() {
+            document.getElementById('overlay').style.display = 'flex';
+        }
+        
+        function closeErrorPopup() {
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
+
 </body>
 </html>
