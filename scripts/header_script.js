@@ -2,34 +2,23 @@
 //    "<center><img src=\"images/AWSBUILDERSKIWI.png\"></center><text class=\"heading_subtitle\">NZs Premiere Tech Connection Hub! Link up with Presenters and Members today!</text>",
 
 const headers = [
-    "<br /><h1>! Mi Casa, Su Casa !<br>Discord server available for your remote presentations</h1>",
-
-    `<div class=\"presenter-content\"><div class=\"presenter-column-1\">
-        <a href=\"https://www.chiwaichan.co.nz\" target="_blank"><img src=\"images/presenter-banners/2.png\"></a>
-      </div>
-      <div class=\"presenter-column-2\">
-        <a href=\"https://awsfanboy.kiwi\" target="_blank"><img src=\"images/presenter-banners/4.png\"></a>
-      </div></div>`,
-
-    "<br /><h1>Connect with your community on Discord today</h1>",
-
-    `<div class=\"presenter-content\"><div class=\"presenter-column-1\">
-        <a href=\"https://chamila.dev/blog\" target="_blank"><img src=\"images/presenter-banners/3.png\"></a>
-      </div>
-      <div class=\"presenter-column-2\">
-        <a href=\"https://www.linkedin.com/in/ramstack/\" target="_blank"><img src=\"images/presenter-banners/5.png\"></a>
-      </div></div>`,
-    
-    `<div class=\"presenter-content\"><div class=\"presenter-column-1\">
-        <img src=\"images/presenter-banners/younext.png\"></a>
-      </div>
-      <div class=\"presenter-column-2\">
-        <a href=\"https://dunlop.geek.nz\" target="_blank"><img src=\"images/presenter-banners/1.png\"></a> 
-      </div></div>`,
-
-    "<br /><h1>Discord has a powerful event management system to host your conference style remote presentations.</h1>",
-
-    "<img src=\"images/AWSBUILDERSKIWI.png\" class=\"logo-image\"><br /><br /><h2>NZs Premiere Tech Connection Hub! Link up with Presenters and Members today!<h2>",
+  "<br /><h1 class=\"hb\">! Mi Casa, Su Casa !<br>Discord server available for your remote presentations</h1>",
+  `<br /><a href=\"https://www.chiwaichan.co.nz\" target="_blank"><img src=\"images/presenter-banners/2.png\" class=\"presenter-image\"></a>`,
+  `<br /><a href=\"https://awsfanboy.kiwi\" target="_blank"><img src=\"images/presenter-banners/4.png\" class=\"presenter-image\"></a>`,
+  "<br /><h1 class=\"hb\">Connect with your community on Discord today</h1>",
+  `<br /><a href=\"https://chamila.dev/blog\" target="_blank"><img src=\"images/presenter-banners/3.png\" class=\"presenter-image\"></a>`,
+  `<br /><a href=\"https://www.linkedin.com/in/ramstack/\" target="_blank"><img src=\"images/presenter-banners/5.png\" class=\"presenter-image\"></a>`,
+  `<br /><img src=\"images/presenter-banners/younext.png\" class=\"presenter-image\">`,
+  `<br /><a href=\"https://dunlop.geek.nz\" target="_blank"><img src=\"images/presenter-banners/1.png\" class=\"presenter-image\"></a>`,
+  "<br /><h1 class=\"hb\">Discords powerful event management system allows you to host your conference style remote presentations today!</h1>",
+  `<center>
+        <img src="images/AWSBUILDERSKIWI.png" class="logo-image">
+    </center>
+    <div>
+        <p>
+        <h1 class="hb">NZs Premiere Tech Connection Hub! Link up with Presenters and Members today!</h1>
+        </p>
+    </div>`
 ];
   
   let currentIndex = 0;
@@ -49,5 +38,5 @@ const headers = [
   }
   
   // Change header every 3 seconds
-  setInterval(changeHeader, 2000);
+  setInterval(changeHeader, 2500);
   

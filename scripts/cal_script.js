@@ -1,3 +1,8 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // Instantiate Calendar after DOM is fully loaded
+    const calendar = new Calendar();
+});
+
 class Calendar {
     constructor() {
         this.isLocalDev = false; // Set to true for local development
@@ -9,7 +14,7 @@ class Calendar {
         this.initializeElements();
         this.addEventListeners();
         this.renderCalendar();
-        this.errorModal = document.getElementById('errorModal');
+        this.errorModal = document.getElementById('overlay');
         this.initializeErrorHandling();
         this.discordEvents = [];
         this.twitchEvents = [];
@@ -44,18 +49,21 @@ class Calendar {
         }
     }
 
+    // Initialize error handling for modal close functionality
     initializeErrorHandling() {
-        // Add error modal close handler
+        // Set up modal error handling
+        this.errorModal = document.getElementById('overlay'); // Select the overlay as the error modal
         const errorCloseBtn = this.errorModal.querySelector('.close-btn');
         errorCloseBtn.addEventListener('click', () => {
-            this.errorModal.style.display = 'none';
+            this.errorModal.style.display = 'none'; // Hide modal on close
         });
     }
-
+ 
+    // Show error modal with a custom error message
     showError(message) {
-        const errorMessage = document.getElementById('errorMessage');
-        errorMessage.textContent = message;
-        this.errorModal.style.display = 'block';
+        const errorMessage = document.querySelector('.error-body'); // Select error body to insert message
+        errorMessage.textContent = errorMessage.textContent + message;
+        this.errorModal.style.display = 'flex'; // Display the error modal
     }
 
     initializeElements() {
@@ -111,16 +119,14 @@ class Calendar {
             console.error('Error fetching Discord events:', error);
             this.discordEvents = [];
 
-            let userMessage = 'Unable to load Discord calendar events. ';
+            let userMessage = 'Unable to load Discord calendar events.\n ';
             if (error.message.includes('HTTP error')) {
                 userMessage += 'The server is not responding. Please try again later.';
             } else if (error.message.includes('Invalid data')) {
                 userMessage += 'The server returned unexpected data.';
-            } else {
-                userMessage += 'Please check your internet connection and try again.';
             }
 
-            this.showError(userMessage);
+            this.showError(userMessage); 
         }
     }
 
@@ -148,8 +154,6 @@ class Calendar {
                 userMessage += 'The server is not responding. Please try again later.';
             } else if (error.message.includes('Invalid data')) {
                 userMessage += 'The server returned unexpected data.';
-            } else {
-                userMessage += 'Please check your internet connection and try again.';
             }
 
             this.showError(userMessage);

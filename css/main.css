@@ -34,7 +34,7 @@ html, body {
 }
 
 html {
-    font-size: 14pt;
+    font-size: 18pt;
 }
 
 body {
@@ -72,6 +72,8 @@ h1.hb {
     font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
     color: rgb(255, 254, 254);
     font-weight: bolder;
+    font-size: 1.5rem;
+    text-align: center;
 }
 
 /* Header Bar Styles */
@@ -99,6 +101,7 @@ h1.hb {
 
 .header-bar-content {
     display: flex;
+    position: relative;
     flex-direction: column; /* Stack items vertically */
     overflow: hidden;
     width: 100%;
@@ -106,50 +109,6 @@ h1.hb {
     align-content: center;
     justify-content: center;
     align-items: center;
-}
-.presenter-content {
-    display: flex;
-    flex-direction: row; /* Stack items vertically */
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-.presenter-column-1{
-    flex: 1;
-    padding 2px;
-    align-content: center;
-    justify-content: center;
-    box-sizing: border-box; /* Include padding and border in column width */
-}
-
-.presenter-column-2 {
-    flex: 1;
-    padding 2px;
-    align-content: center;
-    justify-content: center;
-    box-sizing: border-box; /* Include padding and border in column width */
-}
-
-.presenter-column-1 img,
-.presenter-column-2 img 
-{
-    width: 95%; /* Adjust width as desired */
-    max-width: 100%;
-    height: auto; /* Maintain aspect ratio */
-    margin: auto; /* Centers the image horizontally */
-    display: block; /* Required for margin auto to work on images */
-    object-fit: contain;
-}
-
-/* Optional hover effect */
-.presenter-column-1,
-.presenter-column-2, 
-img:hover {
-    transform: scale(1.05);
 }
 
 @keyframes slide-in {
@@ -167,6 +126,13 @@ img:hover {
     width: 100%; /* Make image width match container width */
     height: auto; /* Maintain aspect ratio */
     max-width: 100%; /* Prevents image from exceeding container width */
+}
+
+.presenter-image {
+    height: 80%; 
+    align-content: center;
+    justify-content: center;
+    padding:5px;
 }
 
 /* Main Container */
@@ -244,6 +210,7 @@ a:visited {
 
 .modal-header {
     display: flex;
+    max-width: 600px;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
@@ -258,7 +225,7 @@ a:visited {
 .modal-content {
     background: rgb(255, 255, 255);
     margin: 5vh auto;
-    padding: 2rem;
+    padding: 1rem;
     width: 90%;
     max-width: 600px;
     border-radius: 10px;
@@ -387,10 +354,21 @@ a:visited {
     .header-bar-content{
         flex-direction: column;
     }
-    .presenter-column-1,
-    .presenter-column-2,
-    .presenter-column-3 {
-        flex: 1 1 45%; /* Each column takes 45% of the width */
+    .presenter-image {
+        height: auto; 
+        width: 100vw;
+        align-content: center;
+        justify-content: center;
+        padding:5px;
+    }
+
+    h1.hb {
+        font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+        color: rgb(255, 254, 254);
+        font-weight: bolder;
+        font-size: 1rem;
+        align-content: center;
+        justify-content: center;
     }
 }
 @media (max-width: 480px) {
@@ -408,5 +386,13 @@ a:visited {
     .presenter-column-2,
     .presenter-column-3 {
         flex: 1 1 100%; /* Each column takes full width on very small screens */
+    }
+    .header-bar {
+        display: block;
+        /* Base layout */
+        min-width: 320px;
+        max-height: 20vh;
+        height: 20vh; /* Set height based on viewport height for flexible scaling */
+
     }
 }
