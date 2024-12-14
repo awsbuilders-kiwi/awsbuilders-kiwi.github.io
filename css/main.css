@@ -20,7 +20,7 @@
     margin: 0;
     padding: 0;
     box-sizing: content-box;
-    font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+    font-family: 'Marcellus SC', 'Helvetica Neue', Helvetica, Arial, serif;
 }
 
 html, body {
@@ -44,17 +44,22 @@ body {
 p {
     white-space: normal;
 }
-
+.marcellus-sc-regular {
+    font-family: "Marcellus SC", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
 /* headers */
 h1 {
-    font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+    font-family: 'Marcellus SC', 'Helvetica Neue', Helvetica, Arial, serif;
     color: white;
     font-weight: bolder;
     font-size: clamp(14px, 6vw, 24px);
 }
 
 h2{
-    font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+    font-family: 'Marcellus SC', 'Helvetica Neue', Helvetica, Arial, serif;
     color: white;
     font-weight: bold;
     font-size: clamp(12px, 6vw, 16px);
@@ -69,7 +74,7 @@ h3{
 
 /* delete this eventually */
 h1.hb {
-    font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+    font-family: 'Marcellus SC', 'Helvetica Neue', Helvetica, Arial, serif;
     color: rgb(255, 254, 254);
     font-weight: bolder;
     font-size: 1.5rem;
