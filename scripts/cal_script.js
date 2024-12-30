@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 class Calendar {
     constructor() {
         this.isLocalDev = false; // Set to true for local development
-         
+
         this.events = [];
         this.expandedEvents = null;
 
@@ -160,12 +160,15 @@ class Calendar {
         }
     }
 
+    // generate all events helps to expand all the recurrence of events for cal rendering...
     async generateAllEvents() {
         const expandedEvents = [];
 
         // Combine Discord and Twitch events
         const allEvents = [...this.discordEvents, ...this.twitchEvents];
         console.log('Combined events before processing:', allEvents);
+
+        // main loop
         for (const event of allEvents) {
             console.log('Processing event:', event);
             if (!event.recurrence_rule) {
@@ -173,7 +176,8 @@ class Calendar {
                 expandedEvents.push(event);
                 continue;
             }
-    
+
+            // not a single day event so we need to work out the recurrence of this..
             console.log('Recurrence rule found:', event.recurrence_rule);
             const rule = event.recurrence_rule;
             const eventStart = new Date(event.scheduled_start_time);
