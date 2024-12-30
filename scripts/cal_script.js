@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 class Calendar {
     constructor() {
-        this.isLocalDev = false; // Set to true for local development
+        this.isLocalDev = true; // Set to true for local development
 
         this.events = [];
         this.expandedEvents = null;
@@ -285,7 +285,7 @@ class Calendar {
 
                 visibleEvents.forEach(event => {
                     const eventIndicator = document.createElement('div');
-                    eventIndicator.className = `event-indicator ${event.platform === 'twitch' ? 'twitch-event' : ''}`;
+                    eventIndicator.className = `event-indicator ${event.platform === 'twitch' ? 'twitch-event' : event.platform === 'discord' ? 'discord-event' : ''}`;
 
                     // Add platform-specific styling
                     if (event.platform === 'twitch') {
@@ -437,7 +437,7 @@ class Calendar {
                 addDetailRow('End Time', new Date(event.scheduled_end_time).toLocaleString('en-NZ'));
             }
         } else {
-            addDetailRow('Presented by ', event.creator.global_name);
+            addDetailRow('Presented by ', event.creator.username);
             addDetailRow('Description', event.description || 'No description provided');
             addDetailRow('Time', new Date(event.scheduled_start_time).toLocaleString('en-NZ'));
 
@@ -451,9 +451,16 @@ class Calendar {
         // Image handling
         const imageContainer = document.getElementById('eventImage');
         if (event.platform ==='discord' && event?.id && event?.imagehash) {
-            const imageUrl = `https://cdn.discordapp.com/guild-events/${event.id}/${event.imagehash}.png?size=512`;
-            imageContainer.style.display = 'block';
-            imageContainer.innerHTML = `<img src="${imageUrl}" alt="${event.name} Image" class="event-image"/>`;
+            if(this.isLocalDev){
+                const imageUrl = `./images/AWSBUILDERSKIWI.png?size=512`;
+                imageContainer.style.display = 'block';
+                imageContainer.innerHTML = `<img src="${imageUrl}" alt="${event.name} Image" class="event-image"/>`;
+            }
+            else{
+                const imageUrl = `https://cdn.discordapp.com/guild-events/${event.id}/${event.imagehash}.png?size=512`;
+                imageContainer.style.display = 'block';
+                imageContainer.innerHTML = `<img src="${imageUrl}" alt="${event.name} Image" class="event-image"/>`;
+            }
         } else {
             imageContainer.style.display = 'none';
             imageContainer.innerHTML = '';

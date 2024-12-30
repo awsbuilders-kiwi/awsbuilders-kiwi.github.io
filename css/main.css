@@ -62,14 +62,14 @@ h2{
     font-family: 'Marcellus SC', 'Helvetica Neue', Helvetica, Arial, serif;
     color: white;
     font-weight: bold;
-    font-size: clamp(12px, 6vw, 16px);
+    font-size: clamp(12px, 6vw, 22px);
 }
 
 h3{
     font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
-    color: white;
+    color: #CCCCCC;
     font-weight: normal;
-    font-size: clamp(8px, 6vw, 14px);
+    font-size: clamp(8px, 6vw, 18px);
 }
 
 /* delete this eventually */
@@ -215,7 +215,7 @@ a:visited {
 
 .modal-header {
     display: flex;
-    max-width: 600px;
+    max-width: 100%;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;

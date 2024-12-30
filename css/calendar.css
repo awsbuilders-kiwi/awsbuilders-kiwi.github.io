@@ -172,6 +172,7 @@
 
 .event-title-container {
     padding: 0 20px;
+    font-weight: bold;
 }
 
 .event-details {
@@ -345,6 +346,13 @@
 }
 
 /* Add these new styles for Twitch events */
+.event-indicator.discord-event {
+    color: black;
+    display: flex;
+    align-items: center;
+}
+
+/* Add these new styles for Twitch events */
 .event-indicator.twitch-event {
     background: #6441a5; /* Twitch purple */
     display: flex;
@@ -425,8 +433,9 @@
 }
 
 .event-details-modal .close-btn {
-    color: #ffffff;
+    color: #b93131;
     float: right;
+    text-align: right;
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
@@ -458,6 +467,7 @@
 /* Discord event style */
 .time-slot-event.discord-event {
     background: var(--secondary-color, #996713);
+    color: #000000;
 }
 
 .time-slot-event.discord-event:hover {
