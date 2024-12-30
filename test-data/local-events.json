@@ -22,7 +22,7 @@
         "count": null,
         "frequency": 2
       },
-      "imagehash": "localoverride",
+      "imagehash": "./images/awsbuilders.kiwi.logo_800x800-cm.png",
       "user_count": 100
     },
     {
@@ -36,13 +36,14 @@
       "scheduled_end_time": null,
       "platform": "discord",
       "recurrence_rule": null,
-      "url": null
+      "imagehash": "./images/AWSBUILDERSKIWI.png",
+      "user_count": 50
     }        
   ],
   "twitchEvents": [
     {
       "id": "test-twitch-1",
-      "name": "Test twitch Event 1",
+      "name": "Test twitch Event1",
       "creator": {
         "username":"Test User"
       },
@@ -59,7 +60,7 @@
     },
     {
       "id": "test-twitch-2",
-      "name": "Test twitch Event 12",
+      "name": "Test twitch Event2",
       "creator": {
         "username":"Test User"
       },

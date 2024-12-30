@@ -452,7 +452,7 @@ class Calendar {
         const imageContainer = document.getElementById('eventImage');
         if (event.platform ==='discord' && event?.id && event?.imagehash) {
             if(this.isLocalDev){
-                const imageUrl = `./images/AWSBUILDERSKIWI.png?size=512`;
+                const imageUrl = `${event.imagehash}`;
                 imageContainer.style.display = 'block';
                 imageContainer.innerHTML = `<img src="${imageUrl}" alt="${event.name} Image" class="event-image"/>`;
             }
