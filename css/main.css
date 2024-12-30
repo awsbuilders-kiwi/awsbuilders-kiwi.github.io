@@ -340,6 +340,22 @@ a:visited {
     transition: transform 0.3s ease;
 }
 
+.errorModal {
+    display: none;
+}
+.error-area {
+    margin-top: 20px;
+    padding: 10px;
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+}
+
+.error-area:empty {
+    display: none;
+}
+
 /* Media Queries for different screen sizes - Responsive Layout */
 @media screen and (max-width: 1110px) {
     .container {

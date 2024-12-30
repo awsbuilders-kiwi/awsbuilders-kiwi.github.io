@@ -1,0 +1,65 @@
+{
+  "discordEvents": [
+    {
+      "id": "test-discord-1",
+      "name": "Test Discord Event 1",
+      "description": "This is a test Discord event for local development",
+      "scheduled_start_time": "2024-12-20T09:00:00.000Z",
+      "scheduled_end_time": "2024-12-20T10:00:00.000Z",
+      "creator": {
+        "global_name": "Test User"
+      },
+      "recurrence_rule": null,
+      "platform": "discord"
+    },
+    {
+      "id": "test-discord-2",
+      "name": "Test Discord Event 2 (Recurring)",
+      "description": "This is a recurring test Discord event",
+      "scheduled_start_time": "2024-12-22T14:00:00.000Z",
+      "scheduled_end_time": "2024-12-22T15:00:00.000Z",
+      "creator": {
+        "global_name": "Test User"
+      },
+      "recurrence_rule": {
+        "interval": 1,
+        "start": "2024-12-22T14:00:00.000Z",
+        "end": "2024-12-31T23:59:59.000Z"
+      },
+      "platform": "discord"
+
+    }
+  ],
+  "twitchEvents": [
+    {
+      "id": "test-twitch-1",
+      "name": "Test twitch Event 1 (Recurring)",
+      "description": "This is a recurring test twitch event",
+      "scheduled_start_time": "2024-12-22T14:00:00.000Z",
+      "scheduled_end_time": "2024-12-22T15:00:00.000Z",
+      "creator": {
+        "global_name": "Test twitch"
+      },
+      "recurrence_rule": {
+        "interval": 1,
+        "start": "2024-12-22T14:00:00.000Z",
+        "end": "2024-12-31T23:59:59.000Z"
+      },
+      "platform": "twitch"
+
+    },
+    {
+      "id": "test-twitch-2",
+      "name": "Test twitch Event 2",
+      "description": "This is a recurring test twitch event",
+      "scheduled_start_time": "2024-12-22T14:00:00.000Z",
+      "scheduled_end_time": "2024-12-22T15:00:00.000Z",
+      "creator": {
+        "global_name": "Test twitch"
+      },
+      "recurrence_rule": null,
+      "platform": "twitch"
+
+    }    
+  ]
+}

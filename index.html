@@ -7,7 +7,6 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <title>AWSBuilders.kiwi - Your NZ AWS Community Hub</title>
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/error_modal.css">
     <link rel="stylesheet" href="css/calendar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +20,6 @@
 </head>
 <body>
     <script src="scripts/cal_script.js"></script>
-    
 
     <!-- Top Header -->
     <div class="header-bar">
@@ -139,32 +137,20 @@
                 </div>
             </div>
 
-            <!-- Error Details Modal -->
+
         </div>
     </div>
-
-    <div class="overlay" id="overlay">
-        <div class="error-popup">
+    <!-- Error Details Modal -->
+    <div class="errorModal" id="errorModal">
+        <div class="error-area">
             <div class="error-header">
                 Error
-                <button class="close-btn" onclick="closeErrorPopup()">×</button>
+                <button class="close-btn">×</button>
             </div>
             <div class="error-body">
-                Oops! Something went wrong.
+                Oops! Something went wrong.<br>
             </div>
         </div>
     </div>
-
-    <!-- Add JavaScript for overlay functionality -->
-    <script>
-        function showErrorPopup() {
-            document.getElementById('overlay').style.display = 'flex';
-        }
-        
-        function closeErrorPopup() {
-            document.getElementById('overlay').style.display = 'none';
-        }
-    </script>
-
 </body>
 </html>

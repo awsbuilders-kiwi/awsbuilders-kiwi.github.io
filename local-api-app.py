@@ -9,6 +9,13 @@ from fastapi.responses import JSONResponse
 # Create a FastAPI app
 app = FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"])
+
 # Configure CORS
 app.add_middleware(
     CORSMiddleware,
@@ -26,8 +33,8 @@ def ensure_test_data():
                 "id": "test-discord-1",
                 "name": "Test Discord Event 1",
                 "description": "This is a test Discord event for local development",
-                "scheduled_start_time": "2024-02-20T09:00:00.000Z",
-                "scheduled_end_time": "2024-02-20T10:00:00.000Z",
+                "scheduled_start_time": "2024-12-20T09:00:00.000Z",
+                "scheduled_end_time": "2024-12-20T10:00:00.000Z",
                 "creator": {
                     "global_name": "Test User"
                 },
@@ -37,14 +44,14 @@ def ensure_test_data():
                 "id": "test-discord-2",
                 "name": "Test Discord Event 2 (Recurring)",
                 "description": "This is a recurring test Discord event",
-                "scheduled_start_time": "2024-02-22T14:00:00.000Z",
-                "scheduled_end_time": "2024-02-22T15:00:00.000Z",
+                "scheduled_start_time": "2024-12-22T14:00:00.000Z",
+                "scheduled_end_time": "2024-12-22T15:00:00.000Z",
                 "creator": {
                     "global_name": "Test User"
                 },
                 "recurrence_rule": {
                     "interval": 1,
-                    "start": "2024-02-22T14:00:00.000Z"
+                    "start": "2024-12-22T14:00:00.000Z"
                 }
             }
         ],
@@ -53,7 +60,7 @@ def ensure_test_data():
                 "id": "test-twitch-1",
                 "title": "Test Twitch Stream",
                 "description": "This is a test Twitch event for local development",
-                "scheduled_start_time": "2024-02-21T16:00:00.000Z",
+                "scheduled_start_time": "2024-12-21T16:00:00.000Z",
                 "platform": "twitch",
                 "category": {
                     "name": "AWS"

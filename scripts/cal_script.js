@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Instantiate Calendar after DOM is fully loaded
-    const calendar = new Calendar();
+    calendar = new Calendar();
 });
 
 class Calendar {
@@ -9,13 +8,15 @@ class Calendar {
          
         this.events = [];
         this.expandedEvents = null;
+
         this.currentDate = new Date();
         this.selectedDate = null;
         this.initializeElements();
         this.addEventListeners();
         this.renderCalendar();
-        this.errorModal = document.getElementById('overlay');
+        this.errorModal = document.getElementById('errorModal');
         this.initializeErrorHandling();
+
         this.discordEvents = [];
         this.twitchEvents = [];
         this.fetchAllEvents();
@@ -44,15 +45,15 @@ class Calendar {
             this.discordEvents = data.discordEvents || [];
             this.twitchEvents = data.twitchEvents || [];
         } catch (error) {
-            console.error('Error loading local test events:', error);
-            this.showError('Failed to load local test events');
+            console.error('Error loading local test e:', error);
+            this.showError('Failed to load local test events. Is the local-api-app.py running? ');
         }
     }
-
+    
     // Initialize error handling for modal close functionality
     initializeErrorHandling() {
         // Set up modal error handling
-        this.errorModal = document.getElementById('overlay'); // Select the overlay as the error modal
+        this.errorModal = document.getElementById('errorModal'); // Select the overlay as the error modal
         const errorCloseBtn = this.errorModal.querySelector('.close-btn');
         errorCloseBtn.addEventListener('click', () => {
             this.errorModal.style.display = 'none'; // Hide modal on close
@@ -126,7 +127,7 @@ class Calendar {
                 userMessage += 'The server returned unexpected data.';
             }
 
-            this.showError(userMessage); 
+            this.showError(userMessage);
         }
     }
 
@@ -155,7 +156,6 @@ class Calendar {
             } else if (error.message.includes('Invalid data')) {
                 userMessage += 'The server returned unexpected data.';
             }
-
             this.showError(userMessage);
         }
     }
@@ -165,20 +165,21 @@ class Calendar {
 
         // Combine Discord and Twitch events
         const allEvents = [...this.discordEvents, ...this.twitchEvents];
-
+        console.log('Combined events before processing:', allEvents);
         for (const event of allEvents) {
+            console.log('Processing event:', event);
             if (!event.recurrence_rule) {
+                console.log('No recurrence rule, adding single event');
                 expandedEvents.push(event);
                 continue;
             }
-
+    
+            console.log('Recurrence rule found:', event.recurrence_rule);
             const rule = event.recurrence_rule;
             const eventStart = new Date(event.scheduled_start_time);
             const ruleStart = new Date(rule.start);
 
             const targetDay = eventStart.getDay();
-
-            // console.log(`${event.name}: Using actual event day ${targetDay}`);
 
             let currentDate = new Date(Math.max(eventStart.getTime(), ruleStart.getTime()));
             const hours = eventStart.getHours();
@@ -216,6 +217,7 @@ class Calendar {
         this.expandedEvents = expandedEvents.sort((a, b) => 
             new Date(a.scheduled_start_time) - new Date(b.scheduled_start_time)
         );
+        console.log('Final expanded and sorted events:', this.expandedEvents);
     }
 
     navigateMonth(delta) {
@@ -639,7 +641,3 @@ class Calendar {
         }
     }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    new Calendar();
-});
