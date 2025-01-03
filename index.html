@@ -8,14 +8,13 @@
     <title>AWSBuilders.kiwi - Your NZ AWS Community Hub</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/calendar.css">
+    <link rel="stylesheet" href="css/accordion.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap" rel="stylesheet">
 </head>
 <body>
-    <script src="scripts/cal_script.js"></script>
-
     <!-- Top Header 
     <div class="header-bar">
         <div class="header-bar-content" id="headerbarContent">
@@ -61,6 +60,36 @@
             <li style="margin-left: 40px">We're all in this together.</li>
 
             <center><hr width="50%"></center>
+            <div class="resources-accordion">
+                <div class="accordion-header">
+                    <span class="resource-text">RESOURCES</span>
+                    <span class="accordion-icon">+</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="resource-category">
+                        <h3>AWS Documentation</h3>
+                        <ul>
+                            <li class="resource-link"><a href="https://docs.aws.amazon.com" target="_blank">AWS Docs Home</a></li>
+                            <li class="resource-link"><a href="https://aws.amazon.com/architecture/" target="_blank">AWS Architecture Center</a></li>
+                        </ul>
+                    </div>
+                    <div class="resource-category">
+                        <h3>Learning Platforms</h3>
+                        <ul>
+                            <li class="resource-link"><a href="https://skillbuilder.aws" target="_blank">AWS Skill Builder</a></li>
+                            <li class="resource-link"><a href="https://www.aws.training" target="_blank">AWS Training</a></li>
+                        </ul>
+                    </div>
+                    <div class="resource-category">
+                        <h3>Community Resources</h3>
+                        <ul>
+                            <li class="resource-link"><a href="https://aws.amazon.com/blogs/" target="_blank">AWS Blogs</a></li>
+                            <li class="resource-link"><a href="https://aws.amazon.com/whitepapers/" target="_blank">AWS Whitepapers</a></li>
+                        </ul>
+                    </div>
+                    <br /><br /><br /><br /><br />
+                </div>
+            </div>
         </div>
 
         <div class="middle">
@@ -162,5 +191,11 @@
             </div>
         </div>
     </div>
+
+    
+
+    <center><hr width="50%"></center>
+    <script src="scripts/cal_script.js"></script>
+    <script src="scripts/accordion_script.js"></script>
 </body>
 </html>

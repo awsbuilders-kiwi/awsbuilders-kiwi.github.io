@@ -1,0 +1,88 @@
+.resources-accordion {
+    margin: 20px 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.accordion-header {
+    background: linear-gradient(45deg, #232f3e, #37475a);
+    color: #ffffff;
+    padding: 15px;
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    font-family: 'Marcellus SC', 'Helvetica Neue', Helvetica, Arial, serif;
+}
+
+.accordion-header:hover {
+    background: linear-gradient(45deg, #37475a, #232f3e);
+}
+
+.resource-text {
+    font-family: 'Marcellus SC', serif;
+    font-size: 1.1em;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-family: 'Marcellus SC', 'Helvetica Neue', Helvetica, Arial, serif;
+}
+.resource-link {
+    font-family: 'Marcellus SC', serif;
+    font-size: .8em;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.accordion-icon {
+    font-size:1.2em;
+    transition: transform 0.3s ease;
+}
+
+.accordion-header.active .accordion-icon {
+    transform: rotate(45deg);
+}
+
+.accordion-content {
+    background: #f8f9fa;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    font-family: 'Marcellus SC', 'Helvetica Neue', Helvetica, Arial, serif;
+}
+
+.resource-category {
+    padding: 15px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.resource-category:last-child {
+    border-bottom: none;
+}
+
+.resource-category h3 {
+    color: #232f3e;
+    margin-bottom: 10px;
+    font-size: 1em;
+    font-family: 'Marcellus SC', 'Helvetica Neue', Helvetica, Arial, serif;
+}
+
+.resource-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.resource-category ul li {
+    margin: 5px 0;
+}
+
+.resource-category ul li a {
+    color: #0066c0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.resource-category ul li a:hover {
+    color: #c45500;
+}
