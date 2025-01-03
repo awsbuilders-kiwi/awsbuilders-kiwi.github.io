@@ -7,7 +7,7 @@
 .accordion-header {
     background: linear-gradient(45deg, #232f3e, #37475a);
     color: #ffffff;
-    padding: 15px;
+    padding: 6px;
     cursor: pointer;
     justify-content: space-between;
     align-items: center;
@@ -44,7 +44,7 @@
 }
 
 .accordion-content {
-    background: #f8f9fa;
+    background: #000000;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
@@ -61,7 +61,7 @@
 }
 
 .resource-category h3 {
-    color: #232f3e;
+    color: #b3b8be;
     margin-bottom: 10px;
     font-size: 1em;
     font-family: 'Marcellus SC', 'Helvetica Neue', Helvetica, Arial, serif;
@@ -86,3 +86,9 @@
 .resource-category ul li a:hover {
     color: #c45500;
 }
+
+.resources-accordion hr {
+    display: block;
+    margin: 10rem 0 10rem 0;
+    border: none;
+    }
