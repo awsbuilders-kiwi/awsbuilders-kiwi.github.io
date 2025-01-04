@@ -3,7 +3,6 @@
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     padding: 1rem;
-    
     display: flex;
     flex-direction: column;
     position: relative;
@@ -39,14 +38,6 @@
     max-width: 100%; /* Prevents it from stretching beyond container */
 }
 
-.weekday {
-    text-align: center;
-    font-weight: bold;
-    padding: 0.5rem;
-    background-color: var(--secondary-color);
-    color: white;
-}
-
 .calendar-day {
     min-height: 120px;
     height: 100%;
@@ -64,6 +55,14 @@
 
 .calendar-day:hover {
     background-color: var(--hover-color);
+}
+
+.weekday {
+    text-align: center;
+    font-weight: bold;
+    padding: 0.5rem;
+    background-color: var(--secondary-color);
+    color: white;
 }
 
 .day-number {
@@ -110,6 +109,10 @@
     background: #95a5a6;
 }
 
+.event-details p {
+    margin-bottom: 0.5rem;
+}
+
 .time-slots {
     display: grid;
     gap: 0.5rem;
@@ -130,10 +133,6 @@
     border-radius: 5px;
     margin-top: 0.5rem;
     cursor: pointer;
-}
-
-.event-details p {
-    margin-bottom: 0.5rem;
 }
 
 .time-slots::-webkit-scrollbar {
@@ -187,6 +186,62 @@
 
 .event-details .value {
     word-break: break-word;
+}
+
+.event-details-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+}
+
+.event-details-modal .modal-content {
+    background: linear-gradient(145deg, #2a2a2a, #363636);
+    color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3),
+                0 0 0 2px rgba(255, 255, 255, 0.1);
+    margin: 5vh auto;
+    padding: 0;
+    width: auto;
+    min-width: 300px;
+    max-width: 800px;
+    position: relative;
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+
+.event-details-modal .modal-header {
+    background: linear-gradient(145deg, #3a3a3a, #444444);
+    padding: 1rem;
+    border-radius: 15px 15px 0 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.event-details-modal .modal-body {
+    padding: 1.5rem;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.event-details-modal .close-btn {
+    color: #b93131;
+    float: right;
+    text-align: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.event-details-modal .close-btn:hover {
+    color: #ff4444;
 }
 
 #calendarLinks, #discordLinks {
@@ -262,6 +317,96 @@
     margin: 0;
     font-family: 'Aclonica';
     font-size: 22px;
+}
+
+/* Time slot event styles */
+.time-slot-event {
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.2s ease;
+}
+
+/* Discord Time slot event styles */
+.time-slot-event.discord-event {
+    background: var(--secondary-color, #996713);
+    color: #000000;
+}
+
+.time-slot-event.discord-event:hover {
+    background: var(--secondary-color-dark, #805710);
+}
+
+.event-indicator.discord-event {
+    color: black;
+    display: flex;
+    align-items: center;
+}
+
+/* Meetup Time slot event styles*/
+.event-indicator.usergroup-event {
+    background: #1a0147;
+    display: flex;
+    align-items: center;
+}
+.event-indicator.usergroup-event:hover {
+    background: #4f03dc; /* Lighter purple on hover */
+}
+
+.usergroup-link {
+    display: inline-block;
+    margin: 4px 4px 4px 0;
+    padding: 4px 8px;
+    background: #9506c9;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+    white-space: nowrap;
+}
+.time-slot-event.usergroup-event {
+    background: #1a0147;
+}
+
+.time-slot-event.usergroup-event:hover {
+    background: #4f03dc;
+}
+
+/* Twitch Time slot event styles*/
+.event-indicator.twitch-event {
+    background: #6441a5; /* Twitch purple */
+    display: flex;
+    align-items: center;
+}
+
+.event-indicator.twitch-event:hover {
+    background: #7d5bbe; /* Lighter purple on hover */
+}
+
+.twitch-link {
+    display: inline-block;
+    margin: 4px 4px 4px 0;
+    padding: 4px 8px;
+    background: #6441a5;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.twitch-link:hover {
+    background: #7d5bbe;
+}
+
+.time-slot-event.twitch-event {
+    background: #6441a5;
+}
+
+.time-slot-event.twitch-event:hover {
+    background: #7d5bbe;
 }
 
 /* Media Queries */
@@ -345,69 +490,6 @@
     }
 }
 
-/* Add these new styles for Twitch events */
-.event-indicator.discord-event {
-    color: black;
-    display: flex;
-    align-items: center;
-}
-
-/* Add these new styles for Twitch events */
-.event-indicator.twitch-event {
-    background: #6441a5; /* Twitch purple */
-    display: flex;
-    align-items: center;
-}
-
-.event-indicator.twitch-event:hover {
-    background: #7d5bbe; /* Lighter purple on hover */
-}
-
-/* Add styles for Twitch links */
-.twitch-link {
-    display: inline-block;
-    margin: 4px 4px 4px 0;
-    padding: 4px 8px;
-    background: #6441a5;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    text-align: center;
-    white-space: nowrap;
-}
-
-.twitch-link:hover {
-    background: #7d5bbe;
-}
-
-.event-details-modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(5px);
-    overflow: hidden;
-}
-
-.event-details-modal .modal-content {
-    background: linear-gradient(145deg, #2a2a2a, #363636);
-    color: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3),
-                0 0 0 2px rgba(255, 255, 255, 0.1);
-    margin: 5vh auto;
-    padding: 0;
-    width: auto;
-    min-width: 300px;
-    max-width: 800px;
-    position: relative;
-    animation: modalFadeIn 0.3s ease-out;
-}
-
 @keyframes modalFadeIn {
     from {
         opacity: 0;
@@ -419,33 +501,6 @@
     }
 }
 
-.event-details-modal .modal-header {
-    background: linear-gradient(145deg, #3a3a3a, #444444);
-    padding: 1rem;
-    border-radius: 15px 15px 0 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.event-details-modal .modal-body {
-    padding: 1.5rem;
-    max-height: 70vh;
-    overflow-y: auto;
-}
-
-.event-details-modal .close-btn {
-    color: #b93131;
-    float: right;
-    text-align: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.2s ease;
-}
-
-.event-details-modal .close-btn:hover {
-    color: #ff4444;
-}
-
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
     .event-details-modal .modal-content {
@@ -453,33 +508,3 @@
         margin: 2vh auto;
     }
 }
-
-/* Time slot event styles */
-.time-slot-event {
-    padding: 0.5rem;
-    border-radius: 5px;
-    margin-top: 0.5rem;
-    cursor: pointer;
-    color: white;
-    transition: background-color 0.2s ease;
-}
-
-/* Discord event style */
-.time-slot-event.discord-event {
-    background: var(--secondary-color, #996713);
-    color: #000000;
-}
-
-.time-slot-event.discord-event:hover {
-    background: var(--secondary-color-dark, #805710);
-}
-
-/* Twitch event style */
-.time-slot-event.twitch-event {
-    background: #6441a5;
-}
-
-.time-slot-event.twitch-event:hover {
-    background: #7d5bbe;
-}
-

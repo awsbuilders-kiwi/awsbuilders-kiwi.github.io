@@ -71,5 +71,37 @@
       "recurrence_rule": null,
       "url": null
     }    
+  ],
+  "meetupEvents": [
+    {
+      "id": "test-meetup-1",
+      "name": "Wellington AWS Usergroup Meetup",
+      "creator": {
+        "username":"Ram Arunachalam"
+      },
+      "description": "This is a recurring test meetup event",
+      "scheduled_start_time": "2024-12-02T12:00:00+13:00",
+      "scheduled_end_time": null,
+      "platform": "meetup",
+      "recurrence_rule": {
+        "interval": 1,
+        "start": "2024-12-02T12:00:00+13:00",
+        "end": null
+      },
+      "url": null
+    },
+    {
+      "id": "test-meetup-2",
+      "name": "Northland AWS Usergroup Meetup",
+      "creator": {
+        "username":"Dylan Mama"
+      },
+      "description": "This is a recurring test meetup event",
+      "scheduled_start_time": "2024-12-05T12:00:00+13:00",
+      "scheduled_end_time": null,
+      "platform": "meetup",
+      "recurrence_rule": null,
+      "url": null
+    }
   ]
 }

@@ -19,6 +19,7 @@ class Calendar {
 
         this.discordEvents = [];
         this.twitchEvents = [];
+        this.meetupEvents = [];
         this.fetchAllEvents();
     }
 
@@ -33,6 +34,7 @@ class Calendar {
         }
         console.log('Discord events:', this.discordEvents.length);
         console.log('Twitch events:', this.twitchEvents.length);
+        console.log('Meetup events:', this.meetupEvents.length);
         await this.generateAllEvents();
         this.renderCalendar();
     }
@@ -44,6 +46,7 @@ class Calendar {
             const data = await response.json();
             this.discordEvents = data.discordEvents || [];
             this.twitchEvents = data.twitchEvents || [];
+            this.meetupEvents = data.meetupEvents || [];
         } catch (error) {
             console.error('Error loading local test e:', error);
             this.showError('Failed to load local test events. Is the local-api-app.py running? ');
@@ -165,7 +168,7 @@ class Calendar {
         const expandedEvents = [];
 
         // Combine Discord and Twitch events
-        const allEvents = [...this.discordEvents, ...this.twitchEvents];
+        const allEvents = [...this.discordEvents, ...this.twitchEvents, ...this.meetupEvents];
         console.log('Combined events before processing:', allEvents);
 
         // main loop
@@ -285,7 +288,7 @@ class Calendar {
 
                 visibleEvents.forEach(event => {
                     const eventIndicator = document.createElement('div');
-                    eventIndicator.className = `event-indicator ${event.platform === 'twitch' ? 'twitch-event' : event.platform === 'discord' ? 'discord-event' : ''}`;
+                    eventIndicator.className = `event-indicator ${event.platform === 'twitch' ? 'twitch-event' : event.platform === 'discord' ? 'discord-event' : event.platform === 'meetup' ? 'usergroup-event' : ''}`;
 
                     // Add platform-specific styling
                     if (event.platform === 'twitch') {
@@ -385,8 +388,13 @@ class Calendar {
                 // Add platform-specific class
                 if (event.platform === 'twitch') {
                     eventElement.classList.add('twitch-event');
-                } else {
+                } else
+                if(event.platform === 'discord') {
                     eventElement.classList.add('discord-event');
+                }
+                else
+                if(event.platform === 'meetup') {
+                    eventElement.classList.add('usergroup-event');
                 }
                 
                 eventElement.textContent = event.name;
