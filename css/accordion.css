@@ -27,6 +27,7 @@
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     font-family: 'Marcellus SC', 'Helvetica Neue', Helvetica, Arial, serif;
 }
+
 .resource-link {
     font-family: 'Marcellus SC', serif;
     font-size: .8em;
@@ -47,8 +48,9 @@
     background: #000000;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
+    transition: all 0.3s ease-out;
     font-family: 'Marcellus SC', 'Helvetica Neue', Helvetica, Arial, serif;
+    display: none;
 }
 
 .resource-category {
@@ -78,7 +80,7 @@
 }
 
 .resource-category ul li a {
-    color: #0066c0;
+    color: #23b08a;
     text-decoration: none;
     transition: color 0.2s ease;
 }
@@ -92,3 +94,33 @@
     margin: 10rem 0 10rem 0;
     border: none;
     }
+
+.resourceslhsbody {
+    transition: all 0.3s ease-in-out;
+    order: 0;
+}
+
+.resources-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.resourceslhsbody.expanded .resources-content {
+    max-height: auto;
+}
+
+/* Add this to your sidebar container */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+}
+.accordion-content.expanded {
+    display: block;
+    max-height: 1000px; /* Or whatever maximum height you need */
+    overflow: visible;
+}
+
+.resources-accordion.expanded .accordion-content {
+    display: block;
+}

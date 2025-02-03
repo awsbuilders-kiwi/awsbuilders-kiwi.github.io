@@ -1,14 +1,34 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const accordion = document.querySelector('.accordion-header');
-    const content = document.querySelector('.accordion-content');
+document.addEventListener('DOMContentLoaded', () => {
+    const resourcesAccordion = document.querySelector('.resources-accordion');
+    const accordionHeader = resourcesAccordion.querySelector('.accordion-header');
+    const accordionContent = resourcesAccordion.querySelector('.accordion-content');
+    const accordionIcon = resourcesAccordion.querySelector('.accordion-icon');
+    const resourceslhsbody = document.querySelector('.lhs-body');
     
-    accordion.addEventListener('click', function() {
-        this.classList.toggle('active');
+    // Store the original scroll position
+    let originalScrollPosition = 0;
+
+    accordionHeader.addEventListener('click', () => {
+        // Toggle the expanded state
+        const isExpanded = resourcesAccordion.classList.toggle('expanded');
+        accordionContent.classList.toggle('expanded');
         
-        if (content.style.maxHeight) {
-            content.style.maxHeight = null;
+        // Update the icon
+        accordionIcon.textContent = isExpanded ? '−' : '+';
+        
+        // Toggle lhs-body visibility based on expanded state
+        resourceslhsbody.style.display = isExpanded ? 'none' : 'block';
+        
+        if (isExpanded) {
+            // Store the current scroll position before scrolling to top
+            originalScrollPosition = window.scrollY;
+            resourcesAccordion.scrollIntoView({ behavior: 'smooth' });
         } else {
-            content.style.maxHeight = content.scrollHeight + "px";
+            // Restore the original scroll position when closing
+            window.scrollTo({
+                top: originalScrollPosition,
+                behavior: 'smooth'
+            });
         }
     });
 });
