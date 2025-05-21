@@ -270,12 +270,13 @@ class Calendar {
                 dayNumber.className = 'day-number';
                 dayNumber.textContent = day;
                 dayElement.appendChild(dayNumber);
-                const EARLIEST_HOUR = 8;
+                //const EARLIEST_HOUR = 24;
                 let dayEvents = this.getEventsForDate(new Date(year, month, day));
 
                 dayEvents = dayEvents.filter(event => {
                     const eventTime = new Date(event.scheduled_start_time);
-                    return eventTime.getHours() >= EARLIEST_HOUR;
+                    //return eventTime.getHours() >= EARLIEST_HOUR;
+                    return eventTime.getHours();
                 })
                 dayEvents = dayEvents.sort((a, b) => {
                     if (a.platform === b.platform) {
