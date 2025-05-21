@@ -4,9 +4,9 @@ header('Content-Disposition: attachment; filename="twitch_event.ics"');
 
 // Configuration
 $config = [
-    'broadcaster_id' => '132954738',
-    'client_id' => 'g098yux3tq6nnf53ss4g51445j6nwl',
-    'access_token' => 'dg4ju3sg8f0zrwvl7i7est9erfl0kz'
+    'broadcaster_id' => '123',
+    'client_id' => '123',
+    'access_token' => '123'
 ];
 
 // Function to handle errors
