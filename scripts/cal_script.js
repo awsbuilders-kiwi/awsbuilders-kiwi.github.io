@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 class Calendar {
     constructor() {
-        this.isLocalDev = true; // Set to true for local development
+        this.isLocalDev = false; // Set to true for local development
 
         this.events = [];
         this.expandedEvents = null;
