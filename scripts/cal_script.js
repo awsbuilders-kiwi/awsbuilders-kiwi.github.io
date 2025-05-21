@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 class Calendar {
     constructor() {
-        this.isLocalDev = false; // Set to true for local development
+        this.isLocalDev = true; // Set to true for local development
 
         this.events = [];
         this.expandedEvents = null;
@@ -169,6 +169,7 @@ class Calendar {
 
         // Combine Discord and Twitch events
         const allEvents = [...this.discordEvents, ...this.twitchEvents, ...this.meetupEvents];
+        
         console.log('Combined events before processing:', allEvents);
 
         // main loop
@@ -187,8 +188,14 @@ class Calendar {
             const ruleStart = new Date(rule.start);
 
             const targetDay = eventStart.getDay();
+            // In generateAllEvents method
+            // Add this after the allEvents declaration
+            const pastDate = new Date();
+            pastDate.setMonth(pastDate.getMonth() - 2);
 
-            let currentDate = new Date(Math.max(eventStart.getTime(), ruleStart.getTime()));
+            // Then modify the currentDate initialization to include past events
+            let currentDate = new Date(Math.max(eventStart.getTime(), ruleStart.getTime(), pastDate.getTime()));
+            //let currentDate = new Date(Math.max(eventStart.getTime(), ruleStart.getTime()));
             const hours = eventStart.getHours();
             const minutes = eventStart.getMinutes();
             const endDate = new Date();
@@ -270,12 +277,14 @@ class Calendar {
                 dayNumber.className = 'day-number';
                 dayNumber.textContent = day;
                 dayElement.appendChild(dayNumber);
-                const EARLIEST_HOUR = 8;
+                //const EARLIEST_HOUR = 24;
                 let dayEvents = this.getEventsForDate(new Date(year, month, day));
 
                 dayEvents = dayEvents.filter(event => {
                     const eventTime = new Date(event.scheduled_start_time);
-                    return eventTime.getHours() >= EARLIEST_HOUR;
+                    //return eventTime.getHours() >= EARLIEST_HOUR;
+                    //return eventTime.getHours();
+                    return true;
                 })
                 dayEvents = dayEvents.sort((a, b) => {
                     if (a.platform === b.platform) {
@@ -371,7 +380,7 @@ class Calendar {
 
         timeSlots.innerHTML = '';
 
-        for (let hour = 8; hour <= 22; hour++) {
+        for (let hour = 0; hour <= 23; hour++) {
             const timeSlot = document.createElement('div');
             timeSlot.className = 'time-slot';
             timeSlot.textContent = `${hour}:00`;
